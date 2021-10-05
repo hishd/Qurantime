@@ -23,7 +23,7 @@ public class UIUtil {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         dialog.setContentView(R.layout.popup_progressbar);
         ProgressBar progressBar = dialog.findViewById(R.id.progressBar);
-        progressBar.getIndeterminateDrawable().setColorFilter(activity.getResources().getColor(R.color.blue_light), PorterDuff.Mode.MULTIPLY);
+        progressBar.getIndeterminateDrawable().setColorFilter(activity.getResources().getColor(R.color.blue), PorterDuff.Mode.MULTIPLY);
         dialog.setCancelable(false);
         return dialog;
     }
@@ -36,7 +36,7 @@ public class UIUtil {
         if(dialog.findViewById(R.id.txtMessage)!=null)
             ((TextView)dialog.findViewById(R.id.txtMessage)).setText(message);
         ProgressBar progressBar = dialog.findViewById(R.id.progressBar);
-        progressBar.getIndeterminateDrawable().setColorFilter(activity.getResources().getColor(R.color.blue_light), PorterDuff.Mode.MULTIPLY);
+        progressBar.getIndeterminateDrawable().setColorFilter(activity.getResources().getColor(R.color.blue), PorterDuff.Mode.MULTIPLY);
         dialog.setCancelable(false);
         return dialog;
     }
@@ -45,7 +45,7 @@ public class UIUtil {
     public Toast CustomToast(Context context, String message) {
         Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
         View view = toast.getView();
-        view.getBackground().setColorFilter(ContextCompat.getColor(context, R.color.blue_light), PorterDuff.Mode.SRC_IN);
+        view.getBackground().setColorFilter(ContextCompat.getColor(context, R.color.blue), PorterDuff.Mode.SRC_IN);
         TextView text = view.findViewById(android.R.id.message);
         text.setTextColor(ContextCompat.getColor(context, R.color.white));
         return toast;

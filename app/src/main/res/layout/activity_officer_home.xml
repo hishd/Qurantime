@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Officer.OfficerHomeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layout_menu"
+        android:padding="@dimen/_20sdp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imgProfile"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@id/imgProfile"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/text_hello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_semi_bold"
+                android:text="@string/good_evening"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:maxLines="1"
+                android:text="Officer Name"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_16sdp" />
+
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_avatar"
+            app:civ_border_color="@color/dark_semi" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_240sdp"
+            android:layout_below="@id/imgProfile"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/bg_gradient"
+            android:padding="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/text_area_overview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:maxLines="1"
+                android:text="@string/area_overview"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_14sdp" />
+
+            <RelativeLayout
+                android:id="@+id/container_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_area_overview"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <RelativeLayout
+                    android:id="@+id/container_patient_count"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/container_red"
+                    android:elevation="@dimen/_3sdp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/txtPatientCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="000"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16sdp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtPatientCount"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="@string/patients"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/text_as_at"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_toEndOf="@id/container_patient_count"
+                    android:fontFamily="@font/gilroy_semi_bold"
+                    android:maxLines="1"
+                    android:text="@string/as_at"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_toEndOf="@id/text_as_at"
+                    android:fontFamily="@font/gilroy_semi_bold"
+                    android:maxLines="1"
+                    android:text="2000-00-00"
+                    android:textColor="@color/light_gray"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/text_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_as_at"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_toEndOf="@id/container_patient_count"
+                    android:fontFamily="@font/gilroy_semi_bold"
+                    android:maxLines="1"
+                    android:text="@string/area"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/txtArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_as_at"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_toEndOf="@id/text_area"
+                    android:fontFamily="@font/gilroy_semi_bold"
+                    android:maxLines="2"
+                    android:text="Name of the area"
+                    android:textColor="@color/light_gray"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/container_top"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/container_white"
+                    android:elevation="@dimen/_3sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/text_critical_condition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:maxLines="1"
+                        android:text="@string/critical_condition"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <TextView
+                        android:id="@+id/txtCriticalCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:maxLines="1"
+                        android:text="00"
+                        android:textAlignment="center"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_16sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/container_white"
+                    android:elevation="@dimen/_3sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/text_normal_condition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:maxLines="1"
+                        android:text="@string/critical_condition"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <TextView
+                        android:id="@+id/txtNormalCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:maxLines="1"
+                        android:text="00"
+                        android:textAlignment="center"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/_16sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_menu"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_container_menu"
+        android:padding="@dimen/_15sdp">
+
+        <RelativeLayout
+            android:id="@+id/containerRegisterPatients"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="match_parent"
+            android:background="@drawable/container_orange"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/text_register_patient"
+                android:src="@drawable/ic_register_new_patient" />
+
+            <TextView
+                android:id="@+id/text_register_patient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/gilroy_bold"
+                android:lineSpacingExtra="@dimen/_5sdp"
+                android:text="@string/register_new_patients"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/containerViewPatients"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@id/containerRegisterPatients"
+            android:background="@drawable/container_blue"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/img_view_patients"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_view_patients" />
+
+            <TextView
+                android:id="@+id/text_view_patients"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/img_view_patients"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/_5sdp"
+                android:text="@string/view_patients"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/containerManagePatients"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_below="@id/containerViewPatients"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toEndOf="@id/containerRegisterPatients"
+            android:background="@drawable/container_light_blue"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/img_manage_patients"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_manage_patients" />
+
+            <TextView
+                android:id="@+id/text_manage_patients"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/img_manage_patients"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/_5sdp"
+                android:text="@string/manage_patients"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

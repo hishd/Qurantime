@@ -29,10 +29,11 @@ public class AppConfig {
         return instance;
     }
 
-    public void saveUserConfig(UserModel user) {
+    public void saveUserConfig(UserModel user, boolean isOfficer) {
         initResources();
         lightDB.removeValue(Constraints.USER_CONFIG);
         lightDB.saveString(Constraints.USER_CONFIG, gson.toJson(user));
+        lightDB.saveBoolean(Constraints.USERTYPE_OFFICER, isOfficer);
         setUserLogged(true);
     }
 
@@ -58,6 +59,31 @@ public class AppConfig {
     public boolean getUserLogged() {
         initResources();
         return lightDB.getBoolean(Constraints.USER_LOGGED);
+    }
+
+    public void setInto(boolean status) {
+        initResources();
+        lightDB.saveBoolean(Constraints.SHOW_APP_INTRO, status);
+    }
+
+    public boolean getIntroStatus() {
+        initResources();
+        return lightDB.getBoolean(Constraints.SHOW_APP_INTRO);
+    }
+
+    public boolean isOfficerType() {
+        initResources();
+        return lightDB.getBoolean(Constraints.USERTYPE_OFFICER);
+    }
+
+    public void setLanguage(String language) {
+        initResources();
+        lightDB.saveString(Constraints.APPLICATION_LANGUAGE, language);
+    }
+
+    public String getLanguage(){
+        initResources();
+        return lightDB.getString(Constraints.APPLICATION_LANGUAGE);
     }
 
 }

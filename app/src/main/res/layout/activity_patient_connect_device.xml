@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_20sdp"
+    tools:context=".Activity.Patient.PatientConnectDevice">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="@dimen/_8sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:background="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/text_connect_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnBack"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:text="@string/connect_device"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_16sdp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_below="@id/text_connect_device"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="search_device.json"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:id="@+id/text_all_devices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animationView"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:gravity="center"
+        android:text="@string/available_devices"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/_12sdp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listDevices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnSearchDevice"
+        android:layout_below="@id/text_all_devices"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <Button
+        android:id="@+id/btnSearchDevice"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_60sdp"
+        android:background="@drawable/button_light_blue_round"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:text="@string/search_devices"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sdp" />
+
+</RelativeLayout>

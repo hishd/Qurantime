@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hishd.qurantime.APIService.APIOperation;
 import com.hishd.qurantime.R;
 import com.hishd.qurantime.Util.AppConfig;
+import com.hishd.qurantime.Util.LocaleHelper;
 import com.hishd.qurantime.Util.UIUtil;
 
 import org.aviran.cookiebar2.CookieBar;
@@ -34,6 +35,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         apiOperation = APIOperation.getInstance();
         appConfig = AppConfig.getInstance();
     }
+
+    protected abstract void setupResources();
+    protected abstract void setListeners();
 
     protected static void hideSoftKeyboard (Activity activity, View view)
     {

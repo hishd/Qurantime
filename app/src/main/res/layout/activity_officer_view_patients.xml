@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_20sdp"
+    tools:context=".Activity.Officer.OfficerViewPatientsActivity">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="@dimen/_8sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:background="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/text_view_patients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnBack"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:text="@string/view_patients"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_16sdp" />
+
+    <TextView
+        android:id="@+id/text_filter_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnBack"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:gravity="center"
+        android:text="Filter By"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_12sdp" />
+
+    <RadioGroup
+        android:id="@+id/radioGrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_filter_by"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioHealthStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/health_status"
+            android:textColor="@color/gray" />
+
+        <RadioButton
+            android:id="@+id/radioCondition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:text="@string/current_condition"
+            android:textColor="@color/gray" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/switchGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioGrp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <com.github.angads25.toggle.widget.LabeledSwitch
+            android:id="@+id/switchHealthStatus"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:textSize="14sp"
+            app:colorBorder="@color/blue"
+            app:colorOn="@color/blue"
+            app:on="true"
+            app:textOff="@string/normal"
+            app:textOn="@string/critical" />
+
+        <com.github.angads25.toggle.widget.LabeledSwitch
+            android:id="@+id/switchCurrentCondition"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:textSize="14sp"
+            app:colorBorder="@color/blue"
+            app:colorOn="@color/blue"
+            app:on="false"
+            app:textOff="@string/normal"
+            app:textOn="@string/severe" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_all_patients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switchGroup"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:gravity="center"
+        android:text="@string/patient_records"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/_12sdp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listPatients"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_all_patients"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+</RelativeLayout>

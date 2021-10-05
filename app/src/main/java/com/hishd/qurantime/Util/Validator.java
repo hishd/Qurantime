@@ -15,8 +15,7 @@ public abstract class Validator {
     final static String EMAIL_PATTERN = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
     final static String NUM_CHAR_PATTERN = "^[a-zA-Z0-9]{1,50}$";
     final static String NIC_PATTERN = "^([0-9]{9}[x|X|v|V]|[0-9]{12})$";
-    //One Number, One Lowercase, One Uppercase, One Special Char, Min Length 6, Max Length 20
-    final static String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{6,20}$";
+    final static String PASSWORD_PATTERN = "^[a-zA-Z0-9]{6,20}$";
     final static String URL_PATTERN = "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?$";
 
     public static boolean isValidNickName(@NotNull String name) {

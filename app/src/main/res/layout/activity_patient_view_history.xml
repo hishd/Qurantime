@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_20sdp"
+    tools:context=".Activity.Patient.PatientViewHistoryActivity">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="@dimen/_8sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:background="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/text_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnBack"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:text="@string/measurement_history"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_16sdp" />
+
+    <TextView
+        android:id="@+id/text_all_patients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_history"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:gravity="center"
+        android:text="Last 10 Measurements"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/_10sdp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_above="@id/container_average"
+        android:id="@+id/listMeasurements"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_all_patients"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <LinearLayout
+        android:id="@+id/container_average"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:weightSum="2">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/container_red"
+            android:elevation="@dimen/_3sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/txtSPO2Status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/average_spo2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:id="@+id/txtSPO2Result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtSPO2Status"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="00.00%"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/container_blue"
+            android:elevation="@dimen/_3sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/txtHRStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Average HR"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:id="@+id/txtHRResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtHRStatus"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

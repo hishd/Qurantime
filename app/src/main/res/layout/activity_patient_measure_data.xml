@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_20sdp"
+    tools:context=".Activity.Patient.PatientMeasureDataActivity">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="@dimen/_8sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:background="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/text_measure_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnBack"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:text="@string/measure_data"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_16sdp" />
+
+    <RelativeLayout
+        android:id="@+id/container_stats"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_below="@id/btnBack"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/bg_gradient"
+        android:padding="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/text_last_measurements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semi_bold"
+            android:maxLines="1"
+            android:text="@string/measured_data"
+            android:textColor="@color/light_gray"
+            android:textSize="@dimen/_12sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_last_measurements"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:id="@+id/container_spo2"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/container_blue"
+                android:elevation="@dimen/_3sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/txtOxygen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/gilroy_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/oxygen"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/txtSPO2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtOxygen"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/gilroy_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="00.00%"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_20sdp" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp"
+                    android:layout_below="@id/txtSPO2"
+                    android:scaleType="centerCrop"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="oxygen.json"
+                    app:lottie_loop="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/container_bpm"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/container_red"
+                android:elevation="@dimen/_3sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/text_heart_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/gilroy_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/heart_rate"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/txtBPM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_heart_rate"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/gilroy_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_20sdp" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp"
+                    android:layout_below="@id/txtBPM"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="hr.json"
+                    app:lottie_loop="true" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/container_stats"
+        android:id="@+id/txtOperationStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:text="@string/monitoring"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_20sdp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtOperationStatus"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:weightSum="2">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/container_red"
+            android:elevation="@dimen/_3sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/txtSPO2Status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/spo2_level"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+
+            <TextView
+                android:id="@+id/txtSPO2Result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtSPO2Status"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Result"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/container_blue"
+            android:elevation="@dimen/_3sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/txtHRStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/heart_rate"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+
+            <TextView
+                android:id="@+id/txtHRResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtHRStatus"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Result"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/_80sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_80sdp"
+        android:background="@drawable/button_light_blue_round"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:text="@string/done"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sdp" />
+
+</RelativeLayout>

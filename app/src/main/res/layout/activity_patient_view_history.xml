@@ -32,7 +32,7 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:fontFamily="@font/gilroy_semi_bold"
         android:gravity="center"
-        android:text="Last 10 Measurements"
+        android:text="@string/last_10_measurements"
         android:textColor="@color/light_gray"
         android:textSize="@dimen/_10sdp" />
 

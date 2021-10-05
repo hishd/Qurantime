@@ -21,9 +21,10 @@
         android:layout_below="@id/animationViewIntro"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/gilroy_semi_bold"
         android:text="Caption"
-        android:textColor="@android:color/white"
-        android:textSize="22sp"
+        android:textColor="@color/gray"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -32,12 +33,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtCaption"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/gilroy_regular"
         android:lineSpacingExtra="7dp"
         android:paddingStart="30dp"
         android:paddingEnd="30dp"
         android:text="This is a sample text content."
         android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="17sp" />
+        android:textColor="@color/gray"
+        android:textSize="16sp" />
 
 </RelativeLayout>

@@ -34,6 +34,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         apiOperation = APIOperation.getInstance();
         appConfig = AppConfig.getInstance();
+
+        if(AppConfig.getInstance().getLanguage() == null) {
+            LocaleHelper.setLocale(this, "en");
+        } else {
+            LocaleHelper.setLocale(this, AppConfig.getInstance().getLanguage());
+        }
     }
 
     protected abstract void setupResources();

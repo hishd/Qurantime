@@ -72,7 +72,7 @@
                     android:maxLines="1"
                     android:text="@string/oxygen"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_13sdp" />
 
                 <TextView
                     android:id="@+id/txtSPO2"
@@ -120,7 +120,7 @@
                     android:maxLines="1"
                     android:text="@string/heart_rate"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_13sdp" />
 
                 <TextView
                     android:id="@+id/txtBPM"
@@ -149,12 +149,12 @@
     </RelativeLayout>
 
     <TextView
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_below="@id/container_stats"
         android:id="@+id/txtOperationStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/container_stats"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/gilroy_semi_bold"
         android:text="@string/monitoring"
         android:textColor="@color/red"
@@ -189,7 +189,7 @@
                 android:maxLines="1"
                 android:text="@string/spo2_level"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_16sdp" />
+                android:textSize="@dimen/_15sdp" />
 
             <TextView
                 android:id="@+id/txtSPO2Result"
@@ -228,7 +228,7 @@
                 android:maxLines="1"
                 android:text="@string/heart_rate"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_16sdp" />
+                android:textSize="@dimen/_15sdp" />
 
             <TextView
                 android:id="@+id/txtHRResult"

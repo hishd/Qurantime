@@ -269,7 +269,7 @@
             android:layout_toEndOf="@id/img_logout"
             android:fontFamily="@font/gilroy_semi_bold"
             android:gravity="center"
-            android:text="Sign out"
+            android:text="@string/sign_out"
             android:textColor="@color/white" />
 
     </RelativeLayout>

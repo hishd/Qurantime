@@ -45,6 +45,8 @@
         android:orientation="horizontal">
 
         <RadioButton
+            android:buttonTint="@color/blue"
+            android:checked="true"
             android:id="@+id/radioHealthStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,7 +74,7 @@
             android:id="@+id/switchHealthStatus"
             android:layout_width="@dimen/_80sdp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_30sdp"
             android:textSize="14sp"
             app:colorBorder="@color/blue"
             app:colorOn="@color/blue"

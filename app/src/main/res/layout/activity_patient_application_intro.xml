@@ -43,7 +43,7 @@
             android:fontFamily="@font/montserrat_bold"
             android:paddingStart="@dimen/_30sdp"
             android:paddingEnd="@dimen/_30sdp"
-            android:text="Prev"
+            android:text="@string/prev"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_10sdp"
             android:textStyle="bold" />
@@ -60,7 +60,7 @@
             android:fontFamily="@font/montserrat_bold"
             android:paddingStart="@dimen/_30sdp"
             android:paddingEnd="@dimen/_30sdp"
-            android:text="Next"
+            android:text="@string/next"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_10sdp"
             android:textStyle="bold" />

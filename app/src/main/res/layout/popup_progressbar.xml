@@ -18,7 +18,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/gilroy_semi_bold"
-        android:text="Please wait!"
+        android:text="@string/please_wait"
         android:textColor="@color/white"
         android:textSize="@dimen/_13sdp" />
 

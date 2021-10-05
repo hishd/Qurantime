@@ -232,7 +232,7 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:fontFamily="@font/gilroy_bold"
                         android:maxLines="1"
-                        android:text="@string/critical_condition"
+                        android:text="@string/normal_condition"
                         android:textAlignment="center"
                         android:textColor="@color/gray"
                         android:textSize="@dimen/_13sdp" />
@@ -353,7 +353,7 @@
                 android:text="@string/manage_patients"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_13sdp" />
 
         </RelativeLayout>
 

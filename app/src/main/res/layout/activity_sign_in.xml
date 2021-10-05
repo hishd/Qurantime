@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/gilroy_medium"
-            android:text="I am a"
+            android:text="@string/i_am_a"
             android:textColor="@color/gray"
             android:textSize="@dimen/_12sdp" />
 

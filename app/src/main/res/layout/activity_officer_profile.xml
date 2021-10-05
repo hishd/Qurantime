@@ -226,12 +226,12 @@
         android:textSize="@dimen/_10sdp" />
 
     <com.github.angads25.toggle.widget.LabeledSwitch
-        android:layout_marginTop="@dimen/_10sdp"
         android:id="@+id/switchLanguage"
         android:layout_width="@dimen/_70sdp"
         android:layout_height="wrap_content"
         android:layout_below="@id/containerEdit"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_40sdp"
         android:textSize="14sp"
         app:colorBorder="@color/blue"
@@ -269,7 +269,7 @@
             android:layout_toEndOf="@id/img_logout"
             android:fontFamily="@font/gilroy_semi_bold"
             android:gravity="center"
-            android:text="Sign out"
+            android:text="@string/sign_out"
             android:textColor="@color/white" />
 
     </RelativeLayout>

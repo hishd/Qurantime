@@ -16,11 +16,6 @@ public class MainApplication extends Application {
         super.onCreate();
         applicationContext = getApplicationContext();
         NetworkMonitor.init(this);
-        if(AppConfig.getInstance().getLanguage() == null) {
-            LocaleHelper.setLocale(this, "en");
-        } else {
-            LocaleHelper.setLocale(this, AppConfig.getInstance().getLanguage());
-        }
     }
 
     public static Context getContext() {

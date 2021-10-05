@@ -10,7 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/layout_menu"
-        android:padding="@dimen/_20sdp">
+        android:paddingStart="@dimen/_20sdp"
+        android:paddingTop="@dimen/_20sdp"
+        android:paddingEnd="@dimen/_20sdp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -56,7 +58,7 @@
         <RelativeLayout
             android:id="@+id/container_stats"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_130sdp"
+            android:layout_height="@dimen/_125sdp"
             android:layout_below="@id/imgProfile"
             android:layout_marginTop="@dimen/_30sdp"
             android:background="@drawable/bg_gradient"
@@ -210,7 +212,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/container_stats"
-            android:layout_marginTop="@dimen/_5sdp">
+            android:layout_marginTop="@dimen/_10sdp">
 
             <TextView
                 android:id="@+id/text_feel_now"
@@ -315,12 +317,13 @@
                     </RelativeLayout>
 
                     <TextView
-                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:fontFamily="@font/gilroy_semi_bold"
+                        android:gravity="center"
+                        android:lineSpacingExtra="@dimen/_3sdp"
                         android:maxLines="2"
                         android:text="@string/shortness_of_breath"
                         android:textColor="@color/gray"
@@ -348,12 +351,13 @@
                     </RelativeLayout>
 
                     <TextView
-                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:fontFamily="@font/gilroy_semi_bold"
+                        android:gravity="center"
+                        android:lineSpacingExtra="@dimen/_3sdp"
                         android:maxLines="2"
                         android:text="@string/sore_totat"
                         android:textColor="@color/gray"
@@ -381,12 +385,12 @@
                     </RelativeLayout>
 
                     <TextView
-                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:fontFamily="@font/gilroy_semi_bold"
+                        android:gravity="center"
                         android:maxLines="2"
                         android:text="@string/fever"
                         android:textColor="@color/gray"

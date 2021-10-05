@@ -335,8 +335,8 @@
                 app:colorBorder="@color/blue"
                 app:colorOn="@color/blue"
                 app:on="true"
-                app:textOff="No"
-                app:textOn="Yes" />
+                app:textOff="@string/no"
+                app:textOn="@string/yes" />
 
             <TextView
                 android:id="@+id/text_vaccinated"
@@ -348,7 +348,7 @@
                 android:layout_toStartOf="@id/switchVaccinated"
                 android:fontFamily="@font/gilroy_medium"
                 android:gravity="center"
-                android:text="Vaccinated"
+                android:text="@string/vaccinated"
                 android:textColor="@color/light_gray"
                 android:textSize="@dimen/_10sdp" />
 

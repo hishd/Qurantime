@@ -84,7 +84,7 @@
     <string name="measure_caption_1">Turn on Pulse Oximeter</string>
     <string name="measure_caption_2">Connect with Pulse Oximeter</string>
     <string name="measure_caption_3">Place Finger</string>
-    <string name="measure_content_1">Please turn of your Pulse Oximeter using the power switch at the top. Once powered on the LED indicator will turn Blue</string>
+    <string name="measure_content_1">Please turn on your Pulse Oximeter using the power switch at the top. Once powered on the LED indicator will turn Blue</string>
     <string name="measure_content_2">Turn on your WiFi and search the Pulse Oximeter device and connect to the pulse oximeter using the SSID.</string>
     <string name="measure_content_3">Place your finger on the Pulse Oximeter and the device will start measuring data. The measured data will displayed on screen once started.</string>
     <string name="skip">Skip</string>
@@ -108,4 +108,12 @@
     <string name="spo2">SpO2 :</string>
     <string name="bpm">BPM :</string>
     <string name="result">Result :</string>
+    <string name="connection_lost">An available internet connection is required to perform this operation.</string>
+    <string name="i_am_a">I am a</string>
+    <string name="vaccinated">Vaccinated</string>
+    <string name="no">No</string>
+    <string name="yes">yes</string>
+    <string name="sign_out">Sign out</string>
+    <string name="last_10_measurements">Last 10 Measurements</string>
+    <string name="please_wait">Please wait!</string>
 </resources>

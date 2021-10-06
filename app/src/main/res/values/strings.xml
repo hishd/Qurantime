@@ -161,4 +161,7 @@
     <string name="enter_valid_name">Enter a valid name</string>
     <string name="enter_valid_address">Enter valid address</string>
     <string name="enter_valid_contact_no">Enter a valid contact no</string>
+    <string name="remove_patient">Remove patient</string>
+    <string name="remove_patient_caption">You are about to remove this patient record. Which will remove the record on the patient database.</string>
+    <string name="remove">Remove</string>
 </resources>

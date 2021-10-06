@@ -18,8 +18,8 @@ public final class URLEndpoints {
     public static final String officerUpdatePassword = BuildConfig.API_URL + "/officer/password";
     public static final String officerGetAreaOverview = BuildConfig.API_URL + "/officer/areaStat";
     public static final String officerRegisterPatient = BuildConfig.API_URL + "/officer/patient";
-    public static final String officerSearchPatient = BuildConfig.API_URL + "/officer/patient";
-    public static final String officerDeletePatient = BuildConfig.API_URL + "/officer/patient";
+    public static final String officerSearchPatient = BuildConfig.API_URL + "/officer/searchPatients";
+    public static final String officerDeletePatient = BuildConfig.API_URL + "/officer/removePatient";
     public static final String officerFilterPatient = BuildConfig.API_URL + "/officer/filter";
     public static final String officerUpdateProfile= BuildConfig.API_URL + "/officer/profile";
 

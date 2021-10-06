@@ -625,7 +625,7 @@ public class APIOperation {
         if (!checkConnection(callback)) {
             return;
         }
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.DELETE, URLEndpoints.officerDeletePatient, null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, URLEndpoints.officerDeletePatient, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {

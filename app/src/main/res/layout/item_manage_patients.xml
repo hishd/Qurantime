@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:autofit="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_70sdp"
     android:background="@drawable/patient_bg_normal"
@@ -11,16 +12,16 @@
         android:id="@+id/container_logo"
         android:layout_width="@dimen/_70sdp"
         android:layout_height="@dimen/_70sdp"
-        app:cardCornerRadius="5dp">
+        app:cardCornerRadius="3dp">
 
         <ImageView
-            android:padding="@dimen/_10sdp"
-            android:src="@drawable/ic_patient"
             android:id="@+id/imgPatient"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_patient" />
 
     </androidx.cardview.widget.CardView>
 

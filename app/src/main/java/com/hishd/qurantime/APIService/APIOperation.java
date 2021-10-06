@@ -119,7 +119,7 @@ public class APIOperation {
             return;
         }
         final String requestURL = type == USER_TYPE.OFFICER ? URLEndpoints.officerGetOTP : URLEndpoints.patientGetOTP;
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, requestURL, null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, requestURL, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
@@ -275,7 +275,7 @@ public class APIOperation {
         if (!checkConnection(callback)) {
             return;
         }
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, URLEndpoints.patientGetMeasurementHistory, null, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, URLEndpoints.patientGetMeasurementHistory, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 final ArrayList<MeasurementRecordModel> records = new ArrayList<>();
@@ -377,7 +377,7 @@ public class APIOperation {
         if (!checkConnection(callback)) {
             return;
         }
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URLEndpoints.patientUpdateHealthStatus, null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, URLEndpoints.patientUpdateHealthStatus, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
@@ -427,7 +427,7 @@ public class APIOperation {
         if (!checkConnection(callback)) {
             return;
         }
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URLEndpoints.officerGetAreaOverview, null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, URLEndpoints.officerGetAreaOverview, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 final AreaOverviewModel overviewModel = gson.fromJson(response.toString(), AreaOverviewModel.class);
@@ -517,7 +517,7 @@ public class APIOperation {
         if (!checkConnection(callback)) {
             return;
         }
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, URLEndpoints.officerSearchPatient, null, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, URLEndpoints.officerSearchPatient, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 final ArrayList<PatientModel> patients = new ArrayList<>();
@@ -619,7 +619,7 @@ public class APIOperation {
         if (!checkConnection(callback)) {
             return;
         }
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, URLEndpoints.officerFilterPatient, null, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, URLEndpoints.officerFilterPatient, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 final ArrayList<PatientModel> patients = new ArrayList<>();

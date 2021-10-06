@@ -10,14 +10,18 @@ import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 
+import com.hishd.qurantime.APIService.APIOperation;
 import com.hishd.qurantime.Activity.BaseActivity;
+import com.hishd.qurantime.Activity.Officer.OfficerHomeActivity;
+import com.hishd.qurantime.Activity.Patient.PatientHomeActivity;
+import com.hishd.qurantime.Model.UserModel;
 import com.hishd.qurantime.R;
 import com.hishd.qurantime.Util.Validator;
 import com.hishd.qurantime.databinding.ActivitySignInBinding;
 
 import spencerstudios.com.bungeelib.Bungee;
 
-public class SignInActivity extends BaseActivity {
+public class SignInActivity extends BaseActivity implements APIOperation.OnAPIResultCallback {
 
     ActivitySignInBinding binding;
     private Dialog progressDialog;
@@ -74,11 +78,44 @@ public class SignInActivity extends BaseActivity {
                 vibrateDevice();
                 return;
             }
+
+            progressDialog.show();
+            apiOperation.userSignIn(
+                    binding.switchUserType.isOn() ? APIOperation.USER_TYPE.OFFICER : APIOperation.USER_TYPE.PATIENT,
+                    binding.txtEmail.getText().toString().toLowerCase(),
+                    binding.txtPassword.getText().toString(),
+                    this
+            );
         });
 
         binding.btnForgotPassword.setOnClickListener(v -> {
             startActivity(new Intent(this, ForgotPassActivityEnterEmail.class));
             Bungee.fade(this);
         });
+    }
+
+    @Override
+    public void onSignInSuccessful(UserModel userModel) {
+        progressDialog.dismiss();
+        appConfig.saveUserConfig(userModel, binding.switchUserType.isOn());
+        if(binding.switchUserType.isOn()) {
+            startActivity(new Intent(this, OfficerHomeActivity.class));
+        } else {
+            startActivity(new Intent(this, PatientHomeActivity.class));
+        }
+        Bungee.fade(this);
+        finishAffinity();
+    }
+
+    @Override
+    public void onOperationFailed(String error) {
+        progressDialog.dismiss();
+        displayAlert(this, AlertType.ERROR, getString(R.string.operation_failed), error);
+    }
+
+    @Override
+    public void onConnectionLost(String message) {
+        progressDialog.dismiss();
+        displayAlert(this, AlertType.WARNING, getString(R.string.connection_error), message);
     }
 }

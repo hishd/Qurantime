@@ -7,4 +7,6 @@ public class Constraints {
     public static final String USERTYPE_OFFICER = "USERTYPE_OFFICER";
     public static final String APPLICATION_LANGUAGE = "APPLICATION_LANGUAGE";
     public static final String SHOW_APP_INTRO = "SHOW_APP_INTRO";
+    public static final String LAST_MEASUREMENTS = "LAST_MEASUREMENTS";
+    public static final String CURRENT_CONDITION = "CURRENT_CONDITION";
 }

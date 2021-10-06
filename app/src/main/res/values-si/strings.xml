@@ -12,7 +12,7 @@
     <string name="sign_in">පුරන්න</string>
     <string name="enter_valid_email">වලංගු විද්යුත් - තැපැල් ලිපිනයක් ඇතුලත් කරන්න</string>
     <string name="invalid_password">වලංගු නොවන මුරපදයක්</string>
-    <string name="reset_password_caption">ඔබගේ මුරපදය නැවත සැකසීමට කරුණාකර ඔබගේ විද්‍යුත් තැපැල් ලිපිනය ඇතුළත් කරන්න.</string>
+    <string name="reset_password_caption">මුරපදය නැවත සැකසීමට විද්‍යුත් තැපැල් ලිපිනය ඇතුළත් කරන්න.</string>
     <string name="reset">සකසන්න</string>
     <string name="enter_otp_caption">කරුණාකර අප එවා ඇති OTP ඇතුළු කරන්න</string>
     <string name="verify">තහවුරු කරන්න</string>
@@ -116,4 +116,10 @@
     <string name="sign_out">පිටතට</string>
     <string name="last_10_measurements">අවසාන මිනුම් 10</string>
     <string name="please_wait">රැඳී සිටින්න!</string>
+    <string name="operation_timeout_error">Operation timeout please retry!</string>
+    <string name="user_not_found_error">User not found!</string>
+    <string name="invalid_credentials_error">Invalid Username or Password!</string>
+    <string name="server_error">Server error, Please try again!</string>
+    <string name="no_records_error">No records found!</string>
+    <string name="application_error">Application Error. Please Retry!</string>
 </resources>

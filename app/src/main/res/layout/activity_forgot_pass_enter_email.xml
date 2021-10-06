@@ -25,17 +25,48 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_180sdp"
         android:layout_below="@id/btnSignIn"
-        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         app:lottie_autoPlay="true"
         app:lottie_fileName="forgot_password.json"
         app:lottie_loop="true" />
 
+    <LinearLayout
+        android:id="@+id/container_user_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animationView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="@string/i_am_a"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_12sdp" />
+
+        <com.github.angads25.toggle.widget.LabeledSwitch
+            android:id="@+id/switchUserType"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textSize="14sp"
+            app:colorBorder="@color/blue"
+            app:colorOn="@color/blue"
+            app:on="false"
+            app:textOff="@string/user_type_patient"
+            app:textOn="@string/user_type_officer" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/text_caption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/animationView"
+        android:layout_below="@id/container_user_type"
         android:layout_marginTop="@dimen/_20sdp"
         android:fontFamily="@font/gilroy_bold"
         android:lineSpacingExtra="@dimen/_5sdp"
@@ -52,7 +83,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_caption"
-        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_40sdp"
         android:orientation="vertical"
         android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp">
@@ -85,7 +116,7 @@
         android:layout_below="@id/containerNIC"
         android:layout_centerInParent="true"
         android:layout_marginStart="@dimen/_70sdp"
-        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:layout_marginEnd="@dimen/_70sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/button_light_blue_round"

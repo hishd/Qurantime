@@ -53,7 +53,7 @@
             android:textSize="@dimen/_12sdp" />
 
         <com.github.angads25.toggle.widget.LabeledSwitch
-            android:id="@+id/switchLanguage"
+            android:id="@+id/switchUserType"
             android:layout_width="@dimen/_70sdp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"

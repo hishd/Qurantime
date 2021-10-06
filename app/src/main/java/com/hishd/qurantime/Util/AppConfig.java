@@ -3,6 +3,8 @@ package com.hishd.qurantime.Util;
 import com.google.gson.Gson;
 import com.hishd.lightdb.LightDB;
 import com.hishd.qurantime.Application.MainApplication;
+import com.hishd.qurantime.Model.CurrentConditionModel;
+import com.hishd.qurantime.Model.LastMeasurementsModel;
 import com.hishd.qurantime.Model.UserModel;
 
 public class AppConfig {
@@ -27,6 +29,36 @@ public class AppConfig {
 
     public static AppConfig getInstance() {
         return instance;
+    }
+
+    public void saveLastMeasurements(LastMeasurementsModel measurements) {
+        initResources();
+        lightDB.removeValue(Constraints.LAST_MEASUREMENTS);
+        lightDB.saveString(Constraints.LAST_MEASUREMENTS, gson.toJson(measurements));
+    }
+
+    public LastMeasurementsModel getLastMeasurements() {
+        initResources();
+        if(lightDB.getString(Constraints.LAST_MEASUREMENTS) == null) {
+            return null;
+        }
+
+        return gson.fromJson(lightDB.getString(Constraints.LAST_MEASUREMENTS), LastMeasurementsModel.class);
+    }
+
+    public void saveCurrentCondition(CurrentConditionModel currentCondition) {
+        initResources();
+        lightDB.removeValue(Constraints.CURRENT_CONDITION);
+        lightDB.saveString(Constraints.CURRENT_CONDITION, gson.toJson(currentCondition));
+    }
+
+    public CurrentConditionModel getLastCurrentCondition() {
+        initResources();
+        if(lightDB.getString(Constraints.CURRENT_CONDITION) == null) {
+            return null;
+        }
+
+        return gson.fromJson(lightDB.getString(Constraints.CURRENT_CONDITION), CurrentConditionModel.class);
     }
 
     public void saveUserConfig(UserModel user, boolean isOfficer) {

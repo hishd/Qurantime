@@ -116,4 +116,10 @@
     <string name="sign_out">Sign out</string>
     <string name="last_10_measurements">Last 10 Measurements</string>
     <string name="please_wait">Please wait!</string>
+    <string name="operation_timeout_error">Operation timeout please retry!</string>
+    <string name="user_not_found_error">User not found!</string>
+    <string name="invalid_credentials_error">Invalid Username or Password!</string>
+    <string name="server_error">Server error, Please try again!</string>
+    <string name="no_records_error">No records found!</string>
+    <string name="application_error">Application Error. Please Retry!</string>
 </resources>

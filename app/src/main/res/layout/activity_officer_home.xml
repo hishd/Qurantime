@@ -43,7 +43,7 @@
                 android:maxLines="1"
                 android:text="Officer Name"
                 android:textColor="@color/blue"
-                android:textSize="@dimen/_16sdp" />
+                android:textSize="@dimen/_18sdp" />
 
         </LinearLayout>
 

@@ -4,6 +4,7 @@
     xmlns:autofit="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_90sdp"
+    android:id="@+id/rootLayout"
     android:background="@drawable/patient_bg_normal"
     android:elevation="@dimen/_4sdp">
 
@@ -128,7 +129,7 @@
                 android:textSize="@dimen/_9sdp" />
 
             <TextView
-                android:id="@+id/txtContactNo"
+                android:id="@+id/txtTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"

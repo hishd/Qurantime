@@ -7,17 +7,17 @@ public class PatientModel {
     private String cityID;
     private String hospitalID;
     private String healthStatus;
-    private String condition;
+    private String latestCondition;
     private String lastUpdate;
 
-    public PatientModel(String nicNo, String fullName, String contactNo, String cityID, String hospitalID, String healthStatus, String condition, String lastUpdate) {
+    public PatientModel(String nicNo, String fullName, String contactNo, String cityID, String hospitalID, String healthStatus, String latestCondition, String lastUpdate) {
         this.nicNo = nicNo;
         this.fullName = fullName;
         this.contactNo = contactNo;
         this.cityID = cityID;
         this.hospitalID = hospitalID;
         this.healthStatus = healthStatus;
-        this.condition = condition;
+        this.latestCondition = latestCondition;
         this.lastUpdate = lastUpdate;
     }
 
@@ -69,12 +69,12 @@ public class PatientModel {
         this.healthStatus = healthStatus;
     }
 
-    public String getCondition() {
-        return condition;
+    public String getLatestCondition() {
+        return latestCondition;
     }
 
-    public void setCondition(String condition) {
-        this.condition = condition;
+    public void setLatestCondition(String latestCondition) {
+        this.latestCondition = latestCondition;
     }
 
     public String getLastUpdate() {

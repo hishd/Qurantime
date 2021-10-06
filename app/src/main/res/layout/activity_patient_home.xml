@@ -22,6 +22,7 @@
             android:layout_alignParentTop="true"
             android:layout_toStartOf="@id/imgProfile"
             android:orientation="vertical"
+            android:paddingStart="@dimen/_10sdp"
             android:paddingEnd="@dimen/_10sdp">
 
             <TextView

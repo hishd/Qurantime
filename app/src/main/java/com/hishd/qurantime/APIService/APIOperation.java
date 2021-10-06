@@ -17,6 +17,7 @@ import com.dasbikash.android_network_monitor.NetworkMonitor;
 import com.google.gson.Gson;
 import com.hishd.qurantime.Application.MainApplication;
 import com.hishd.qurantime.Model.AreaOverviewModel;
+import com.hishd.qurantime.Model.HospitalModel;
 import com.hishd.qurantime.Model.MeasurementRecordModel;
 import com.hishd.qurantime.Model.PatientModel;
 import com.hishd.qurantime.Model.PatientRegistrationModel;
@@ -64,6 +65,59 @@ public class APIOperation {
         if(!NetworkMonitor.isConnected())
             callback.onConnectionLost(context.getResources().getString(R.string.connection_lost));
         return NetworkMonitor.isConnected();
+    }
+
+    public void getAvailableHospitals(String cityID, OnAPIResultCallback callback) {
+        if (!checkConnection(callback)) {
+            return;
+        }
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, URLEndpoints.getAllHospitals, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                final ArrayList<HospitalModel> hospitals = new ArrayList<>();
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        jsonObject = response.getJSONObject(i);
+                        hospitals.add(gson.fromJson(jsonObject.toString(), HospitalModel.class));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        callback.onOperationFailed(context.getResources().getString(R.string.application_error));
+                    }
+                }
+                callback.onHospitalsLoaded(hospitals);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                if (error instanceof TimeoutError) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
+                    return;
+                }
+                Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
+                if (error.networkResponse.statusCode == 404)
+                    callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
+                else if (error.networkResponse.statusCode == 400)
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+            }
+        }) {
+            @Override
+            public byte[] getBody() {
+                Map<String, String> params = new HashMap<>();
+                params.put(Keys.OfficerKeys.cityID, cityID);
+                return new JSONObject(params).toString().getBytes();
+            }
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json";
+            }
+        };
+
+        if (requestQueue == null) {
+            requestQueue = Volley.newRequestQueue(context);
+        }
+        requestQueue.add(jsonArrayRequest);
     }
 
     public void userSignIn(USER_TYPE type, String emailAddress, String password, OnAPIResultCallback callback) {
@@ -682,6 +736,7 @@ public class APIOperation {
         default void onSymptomsUpdated(String message){}
         default void onHealthStatusUpdated(String message){}
         default void onPatientHistoryLoaded(ArrayList<MeasurementRecordModel> lastMeasurements){}
+        default void onHospitalsLoaded(ArrayList<HospitalModel> hospitals) {}
         //Non exceptional override methods
         void onOperationFailed(String error);
         void onConnectionLost(String message);

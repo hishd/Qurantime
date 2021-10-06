@@ -1,5 +1,23 @@
 <resources>
     <string name="app_name" translatable="false">Qurantime</string>
+
+    <string-array name="comorbidities">
+        <item>Heart failure</item>
+        <item>Obesity</item>
+        <item>COPD</item>
+        <item>Hypertension</item>
+        <item>Diabetes</item>
+        <item>Renal disease</item>
+        <item>Dementia</item>
+        <item>Cancer</item>
+        <item>Atrial fibrillation</item>
+        <item>Asthma</item>
+        <item>Stroke</item>
+        <item>Depression</item>
+        <item>Chronic renal failure</item>
+        <item>Liver disease</item>
+    </string-array>
+
     <string name="select_preferred_language">Select Preferred Language</string>
     <string name="get_started">Get Started</string>
     <string name="sign_up">Sign up</string>
@@ -135,4 +153,12 @@
     <string name="password_no_match">Passwords does not match</string>
     <string name="password_changed">Password Changed!</string>
     <string name="password_changed_message">Passwords changed successfully.</string>
+    <string name="critical_patients">Critical Patients</string>
+    <string name="normal_patients">Normal Patients</string>
+    <string name="select_comorbidities">Select Comorbidities</string>
+    <string name="cancel">Cancel</string>
+    <string name="invalid_nic">Invalid NIC</string>
+    <string name="enter_valid_name">Enter a valid name</string>
+    <string name="enter_valid_address">Enter valid address</string>
+    <string name="enter_valid_contact_no">Enter a valid contact no</string>
 </resources>

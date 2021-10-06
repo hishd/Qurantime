@@ -22,4 +22,7 @@ public final class URLEndpoints {
     public static final String officerDeletePatient = BuildConfig.API_URL + "/officer/patient";
     public static final String officerFilterPatient = BuildConfig.API_URL + "/officer/filter";
     public static final String officerUpdateProfile= BuildConfig.API_URL + "/officer/profile";
+
+
+    public static final String getAllHospitals= BuildConfig.API_URL + "/hospital";
 }

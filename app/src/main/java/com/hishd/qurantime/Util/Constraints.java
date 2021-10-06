@@ -9,4 +9,5 @@ public class Constraints {
     public static final String SHOW_APP_INTRO = "SHOW_APP_INTRO";
     public static final String LAST_MEASUREMENTS = "LAST_MEASUREMENTS";
     public static final String CURRENT_CONDITION = "CURRENT_CONDITION";
+    public static final int REALM_SCHEMA_V_NOW = 1;
 }

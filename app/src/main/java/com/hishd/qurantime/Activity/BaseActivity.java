@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.hishd.qurantime.APIService.APIOperation;
+import com.hishd.qurantime.DB.QurantimeDB;
 import com.hishd.qurantime.R;
 import com.hishd.qurantime.Util.AppConfig;
 import com.hishd.qurantime.Util.LocaleHelper;
@@ -27,6 +28,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected APIOperation apiOperation;
     protected AppConfig appConfig;
     protected final UIUtil UIUtil = new UIUtil();
+    protected final QurantimeDB qurantimeDB = new QurantimeDB();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

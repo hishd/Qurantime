@@ -146,73 +146,12 @@
                     android:textSize="@dimen/_12sdp" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/btnPickLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_alignBottom="@id/containerLocation"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@null"
-                android:fontFamily="@font/gilroy_bold"
-                android:text="@string/pick_location"
-                android:textAllCaps="false"
-                android:textColor="@color/blue"
-                android:textSize="@dimen/_12sdp" />
-
-            <LinearLayout
-                android:id="@+id/containerLocation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/containerContactNo"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_toStartOf="@id/btnPickLocation"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/gilroy_medium"
-                    android:text="@string/location_coordinates"
-                    android:textColor="@color/light_gray"
-                    android:textSize="@dimen/_10sdp" />
-
-                <EditText
-                    android:id="@+id/txtLocation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:enabled="false"
-                    android:fontFamily="@font/gilroy_medium"
-                    android:inputType="text"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:paddingEnd="@dimen/_10sdp"
-                    android:textSize="@dimen/_12sdp" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btnPickHospital"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_alignBottom="@id/containerHospital"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@null"
-                android:fontFamily="@font/gilroy_bold"
-                android:text="@string/pick_hospital"
-                android:textAllCaps="false"
-                android:textColor="@color/blue"
-                android:textSize="@dimen/_12sdp" />
-
             <LinearLayout
                 android:id="@+id/containerHospital"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/containerLocation"
+                android:layout_below="@id/containerContactNo"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_toStartOf="@id/btnPickLocation"
                 android:orientation="vertical">
 
                 <TextView
@@ -223,16 +162,13 @@
                     android:textColor="@color/light_gray"
                     android:textSize="@dimen/_10sdp" />
 
-                <EditText
-                    android:id="@+id/txtHospital"
+                <Spinner
+                    android:spinnerMode="dialog"
+                    android:id="@+id/spinnerHospital"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:enabled="false"
                     android:fontFamily="@font/gilroy_medium"
-                    android:inputType="text"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:paddingEnd="@dimen/_10sdp"
                     android:textSize="@dimen/_12sdp" />
             </LinearLayout>
 
@@ -285,7 +221,7 @@
                 android:layout_below="@id/containerEmail"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_toStartOf="@id/btnPickLocation"
+                android:layout_toStartOf="@id/btnGeneratePassword"
                 android:orientation="vertical">
 
                 <TextView
@@ -303,7 +239,7 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:enabled="false"
                     android:fontFamily="@font/gilroy_medium"
-                    android:inputType="textPassword"
+                    android:inputType="textVisiblePassword"
                     android:paddingStart="@dimen/_10sdp"
                     android:paddingEnd="@dimen/_10sdp"
                     android:textSize="@dimen/_12sdp"

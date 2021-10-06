@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="select_preferred_language">කැමති භාෂාව තෝරන්න</string>
+    <string-array name="comorbidities">
+        <item>හෘදයාබාධ</item>
+        <item>තරබාරුකම</item>
+        <item>COPD</item>
+        <item>අධි රුධිර පීඩනය</item>
+        <item>දියවැඩියාව</item>
+        <item>වකුගඩු රෝගය</item>
+        <item>ඩිමෙන්ශියාව</item>
+        <item>පිළිකා</item>
+        <item>ඇට්රියල් ෆයිබ්රිලේෂන්</item>
+        <item>ඇදුම</item>
+        <item>ආඝාතය</item>
+        <item>මානසික අවපීඩනය</item>
+        <item>වකුගඩු අකර්මණ්‍ය වීම</item>
+        <item>අක්මා රෝගය</item>
+    </string-array>
     <string name="get_started">ආරම්භ කරන්න</string>
     <string name="sign_up">ලියාපදිංචිය</string>
     <string name="sign_in_with">පුරනය වන්න</string>
@@ -116,23 +132,31 @@
     <string name="sign_out">පිටතට</string>
     <string name="last_10_measurements">අවසාන මිනුම් 10</string>
     <string name="please_wait">රැඳී සිටින්න!</string>
-    <string name="operation_timeout_error">Operation timeout please retry!</string>
-    <string name="user_not_found_error">User not found!</string>
-    <string name="invalid_credentials_error">Invalid Username or Password!</string>
-    <string name="server_error">Server error, Please try again!</string>
-    <string name="no_records_error">No records found!</string>
-    <string name="application_error">Application Error. Please Retry!</string>
-    <string name="operation_failed">Operation Failed</string>
-    <string name="connection_error">Connection Error</string>
-    <string name="otp_failed">OTP Failed</string>
-    <string name="could_not_send_otp">Could not send OTP, Please try again!</string>
-    <string name="invalid_otp">Invalid OTP</string>
-    <string name="otp_no_match">The entered OTP does not match!</string>
-    <string name="otp_sent">OTP Sent</string>
-    <string name="otp_sent_message">Please check your email to find your OTP. Make sure to check \'Spam\' folder.</string>
-    <string name="cant_change_password">Could not change password, Please try again!</string>
-    <string name="password_validation">Password should contain at least 6 characters.</string>
-    <string name="password_no_match">Passwords does not match</string>
-    <string name="password_changed">Password Changed!</string>
-    <string name="password_changed_message">Passwords changed successfully.</string>
+    <string name="operation_timeout_error">කරුණාකර නැවත උත්සාහ කරන්න!</string>
+    <string name="user_not_found_error">පරිශීලකයා හමු නොවීය!</string>
+    <string name="invalid_credentials_error">වලංගු නොවන පරිශීලක නාමය හෝ මුරපදය!</string>
+    <string name="server_error">සේවාදායකයේ දෝෂයක්, නැවත උත්සාහ කරන්න!</string>
+    <string name="no_records_error">වාර්තා හමුවී නැත!</string>
+    <string name="application_error">කරුණාකර නැවත උත්සාහ කරන්න!</string>
+    <string name="operation_failed">මෙහෙයුම අසාර්ථකයි</string>
+    <string name="connection_error">සම්බන්ධතා දෝෂය</string>
+    <string name="otp_failed">OTP අසමත් විය</string>
+    <string name="could_not_send_otp">OTP යැවිය නොහැක, කරුණාකර නැවත උත්සාහ කරන්න!</string>
+    <string name="invalid_otp">වලංගු නොවන OTP</string>
+    <string name="otp_no_match">ඇතුළත් කළ OTP නොගැලපේ!</string>
+    <string name="otp_sent">OTP යවන ලදි</string>
+    <string name="otp_sent_message">OTP සොයා ගැනීමට ඔබගේ විද්‍යුත් තැපෑල පරීක්‍ෂා කරන්න. Spam ෆෝල්ඩරය පරීක්ෂා කරන්න.</string>
+    <string name="cant_change_password">මුරපදය වෙනස් කළ නොහැක, නැවත උත්සාහ කරන්න!</string>
+    <string name="password_validation">මුරපදයේ අවම අක්ෂර 6 ක් වත් තිබිය යුතුය.</string>
+    <string name="password_no_match">මුරපද නොගැලපේ</string>
+    <string name="password_changed">සාර්ථකයි!</string>
+    <string name="password_changed_message">මුරපද සාර්ථකව වෙනස් කරන ලදි.</string>
+    <string name="critical_patients">අමාරු තත්වයේ</string>
+    <string name="normal_patients">සාමාන්‍ය තත්වය</string>
+    <string name="select_comorbidities">Select Comorbidities</string>
+    <string name="cancel">Cancel</string>
+    <string name="invalid_nic">Invalid NIC</string>
+    <string name="enter_valid_name">Enter a valid name</string>
+    <string name="enter_valid_address">Enter valid address</string>
+    <string name="enter_valid_contact_no">Enter a valid contact no</string>
 </resources>

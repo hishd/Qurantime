@@ -1,5 +1,6 @@
 package com.hishd.qurantime.Activity.Officer;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -57,8 +58,13 @@ public class OfficerViewPatientsActivity extends BaseActivity implements FilterP
         apiOperation.officerFilterPatient(appConfig.getUserConfig().getCityID(), "Critical Condition", null, this);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void setListeners() {
+        binding.getRoot().setOnTouchListener((v, event) -> {
+            hideSoftKeyboard(this, v);
+            return true;
+        });
         binding.btnBack.setOnClickListener(v -> {
             onBackPressed();
         });

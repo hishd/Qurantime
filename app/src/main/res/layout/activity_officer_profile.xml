@@ -97,7 +97,7 @@
     <LinearLayout
         android:id="@+id/containerEdit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_270sdp"
         android:layout_below="@id/text_edit_information"
         android:layout_marginTop="@dimen/_10sdp"
         android:background="@drawable/bg_gradient"
@@ -111,6 +111,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/text_full_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/gilroy_medium"
@@ -138,6 +139,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/text_contact_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/gilroy_medium"
@@ -165,6 +167,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/text_email_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/gilroy_medium"
@@ -185,7 +188,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnGeneratePassword"
+            android:id="@+id/btnChangePassword"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_10sdp"
@@ -197,7 +200,7 @@
             android:textSize="@dimen/_12sdp" />
 
         <Button
-            android:id="@+id/btnGetStarted"
+            android:id="@+id/btnUpdate"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="@dimen/_70sdp"
@@ -240,6 +243,17 @@
         app:textOff="සිංහල"
         app:textOn="English" />
 
+    <TextView
+        android:id="@+id/text_restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_select_language"
+        android:fontFamily="@font/gilroy_medium"
+        android:maxLines="1"
+        android:text="@string/application_will_restart"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_10sdp" />
+
     <RelativeLayout
         android:id="@+id/containerSignOut"
         android:layout_width="wrap_content"
@@ -261,6 +275,7 @@
             android:src="@drawable/ic_logout" />
 
         <TextView
+            android:id="@+id/text_sign_out"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/img_logout"

@@ -102,12 +102,17 @@ public class OfficerAddPatientActivity extends BaseActivity implements APIOperat
             return;
         }
         if(binding.spinnerHospital.getSelectedItem() == null) {
-            displayAlert(this, AlertType.INFO, "Select Hospital", "Please select a hospital");
+            displayAlert(this, AlertType.INFO, getString(R.string.select_hospital), getString(R.string.select_hospital_caption));
+            vibrateDevice();
+            return;
+        }
+        if (!Validator.isValidEmail(binding.txtEmail.getText().toString())) {
+            binding.txtEmail.setError(getString(R.string.enter_valid_email));
             vibrateDevice();
             return;
         }
         if (!Validator.isValidPassword(binding.txtPassword.getText().toString())) {
-            binding.txtPassword.setError("Generate a password");
+            binding.txtPassword.setError(getString(R.string.generate_password));
             vibrateDevice();
             return;
         }

@@ -21,7 +21,7 @@
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/activity_officer_add_patient.xml" value="0.33" />
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/activity_officer_home.xml" value="0.33" />
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/activity_officer_manage_patients.xml" value="0.25" />
-        <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/activity_officer_profile.xml" value="0.25" />
+        <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/activity_officer_profile.xml" value="0.33" />
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/activity_officer_view_patients.xml" value="0.33" />
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/activity_patient_application_intro.xml" value="0.2861111111111111" />
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/activity_patient_connect_device.xml" value="0.2861111111111111" />
@@ -35,10 +35,11 @@
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/item_manage_patients.xml" value="0.33" />
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/item_measurement_history.xml" value="0.42916666666666664" />
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/item_search_device.xml" value="0.42916666666666664" />
-        <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/item_view_patient.xml" value="0.2861111111111111" />
+        <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/item_view_patient.xml" value="1.0" />
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/layout_intro_measure_slider.xml" value="0.2861111111111111" />
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/layout_intro_slider.xml" value="0.2861111111111111" />
         <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/app/src/main/res/layout/popup_progressbar.xml" value="0.38179347826086957" />
+        <entry key="..\:/Users/HishD/Desktop/Development/Qurantime/Qurantime_Android/lightPopup/src/main/res/layout/change_password.xml" value="0.42916666666666664" />
       </map>
     </option>
   </component>

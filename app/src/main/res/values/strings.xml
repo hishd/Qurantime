@@ -164,4 +164,11 @@
     <string name="remove_patient">Remove patient</string>
     <string name="remove_patient_caption">You are about to remove this patient record. Which will remove the record on the patient database.</string>
     <string name="remove">Remove</string>
+    <string name="sign_out_caption">Sign out from the application will require you to perform a re sign-in to the application. Are you sure you want to Sign Out?</string>
+    <string name="generate_password">Generate a password</string>
+    <string name="select_hospital">Select Hospital</string>
+    <string name="select_hospital_caption">Please select a hospital</string>
+    <string name="profile_updated">Profile Updated</string>
+    <string name="profile_updated_caption">Profile information updated successfully</string>
+    <string name="application_will_restart">* Application will restart</string>
 </resources>

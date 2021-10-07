@@ -32,31 +32,85 @@
         android:layout_marginTop="@dimen/_30sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="search_device.json"
+        app:lottie_fileName="connect_with_device.json"
         app:lottie_loop="true" />
 
     <TextView
-        android:id="@+id/text_all_devices"
+        android:id="@+id/text_connection_steps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/animationView"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignTop="@id/btnOpenWifi"
+        android:layout_alignBottom="@id/btnOpenWifi"
         android:fontFamily="@font/gilroy_semi_bold"
         android:gravity="center"
-        android:text="@string/available_devices"
+        android:text="@string/connection_steps"
         android:textColor="@color/light_gray"
         android:textSize="@dimen/_12sdp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listDevices"
+    <Button
+        android:id="@+id/btnOpenWifi"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_below="@id/animationView"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/container_blue"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:text="@string/open_wifi"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp" />
+
+    <TextView
+        android:id="@+id/text_instructions_1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/btnSearchDevice"
-        android:layout_below="@id/text_all_devices"
-        android:layout_marginTop="@dimen/_10sdp" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_connection_steps"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/gilroy_medium"
+        android:text="@string/connection_instructions_1"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:id="@+id/text_instructions_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_instructions_1"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/gilroy_medium"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/connection_instruction_2"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:id="@+id/text_instructions_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_instructions_2"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/gilroy_medium"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/connection_instruction_3"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:id="@+id/text_instructions_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_instructions_3"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/gilroy_medium"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:text="@string/connection_instruction_4"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp" />
 
     <Button
-        android:id="@+id/btnSearchDevice"
+        android:id="@+id/btnNext"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
         android:layout_alignParentBottom="true"
@@ -66,7 +120,7 @@
         android:layout_marginEnd="@dimen/_60sdp"
         android:background="@drawable/button_light_blue_round"
         android:fontFamily="@font/gilroy_semi_bold"
-        android:text="@string/search_devices"
+        android:text="@string/next"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/_13sdp" />

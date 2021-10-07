@@ -171,4 +171,26 @@
     <string name="profile_updated">Profile Updated</string>
     <string name="profile_updated_caption">Profile information updated successfully</string>
     <string name="application_will_restart">* Application will restart</string>
+    <string name="need_permission">Need Permission</string>
+    <string name="need_permission_caption">The Application will need WiFi permissions</string>
+    <string name="location_off">Location is off</string>
+    <string name="location_off_caption">Please turn on location on your device</string>
+    <string name="wifi_off">Wifi</string>
+    <string name="wifi_off_caption">If WiFi is turned off please turn on WiFi</string>
+    <string name="permission_granted">permission granted</string>
+    <string name="pulse_oximeter">Pulse Oximeter</string>
+    <string name="access_point">Access Point</string>
+    <string name="invalid_device">Invalid Device</string>
+    <string name="invalid_device_caption">The selected device is not a pulse oximeter</string>
+    <string name="connection_steps">Connection Steps</string>
+    <string name="connection_instructions_1">
+        1) Open your Wifi Settings
+    </string>
+    <string name="connection_instruction_2">2) Connect with your Pulse Oximeter or use the QR on the box to quick connect.</string>
+    <string name="connection_instruction_3">3) Use the provided password on the box to connect.</string>
+    <string name="connection_instruction_4">4) Return Back to this application</string>
+    <string name="open_wifi">Open WiFi</string>
+    <string name="unknown_device">Unknown Device</string>
+    <string name="unknown_device_caption">The connected pulse oximeter could not be found or the application doesn\'t recognize the device. Continue anyway?</string>
+    <string name="continue_operation">Continue</string>
 </resources>

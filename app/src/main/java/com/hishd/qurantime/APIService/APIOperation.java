@@ -99,6 +99,8 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
                 else if (error.networkResponse.statusCode == 400)
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
             @Override
@@ -145,6 +147,8 @@ public class APIOperation {
                 else if (error.networkResponse.statusCode == 401)
                     callback.onOperationFailed(context.getResources().getString(R.string.invalid_credentials_error));
                 else if (error.networkResponse.statusCode == 400)
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
@@ -198,6 +202,8 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.invalid_credentials_error));
                 else if (error.networkResponse.statusCode == 400)
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
             @Override
@@ -248,6 +254,8 @@ public class APIOperation {
                 else if (error.networkResponse.statusCode == 401)
                     callback.onOperationFailed(context.getResources().getString(R.string.invalid_credentials_error));
                 else if (error.networkResponse.statusCode == 400)
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
@@ -303,6 +311,8 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.invalid_credentials_error));
                 else if (error.networkResponse.statusCode == 400)
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
             @Override
@@ -357,6 +367,8 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
                 else if (error.networkResponse.statusCode == 400)
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
             @Override
@@ -404,6 +416,8 @@ public class APIOperation {
                 if (error.networkResponse.statusCode == 404)
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
                 else if (error.networkResponse.statusCode == 400)
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
@@ -454,6 +468,8 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
                 else if (error.networkResponse.statusCode == 400)
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
             @Override
@@ -499,6 +515,8 @@ public class APIOperation {
                 if (error.networkResponse.statusCode == 404)
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
                 else if (error.networkResponse.statusCode == 400)
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
@@ -548,6 +566,9 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
                 else if (error.networkResponse.statusCode == 400)
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+
             }
         }) {
             @Override
@@ -599,6 +620,8 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
                 else if (error.networkResponse.statusCode == 400)
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
             @Override
@@ -647,6 +670,8 @@ public class APIOperation {
                 if (error.networkResponse.statusCode == 404)
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
                 else if (error.networkResponse.statusCode == 400)
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
@@ -700,6 +725,8 @@ public class APIOperation {
                 if (error.networkResponse.statusCode == 404)
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
                 else if (error.networkResponse.statusCode == 400)
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                else
                     callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {

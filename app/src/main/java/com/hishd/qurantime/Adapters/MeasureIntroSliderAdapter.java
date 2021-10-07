@@ -50,7 +50,7 @@ public class MeasureIntroSliderAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View view = layoutInflater != null ? layoutInflater.inflate(R.layout.layout_intro_slider, container, false) : null;
+        View view = layoutInflater != null ? layoutInflater.inflate(R.layout.layout_intro_measure_slider, container, false) : null;
 
         LottieAnimationView animationViewIntro = view.findViewById(R.id.animationViewIntro);
         TextView txtCaption = view.findViewById(R.id.txtCaption);

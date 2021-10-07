@@ -9,7 +9,7 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/_80sdp"
         android:scaleType="centerInside"
         app:lottie_autoPlay="true"
         app:lottie_loop="true" />

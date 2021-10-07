@@ -1,14 +1,18 @@
 package com.hishd.qurantime.Model;
 
+import java.util.Date;
+
 public class LastMeasurementsModel {
     private double lastSPo2;
     private double lastHR;
-    private double healthStatus;
+    private String healthStatus;
+    private Date lastUpdate;
 
-    public LastMeasurementsModel(double lastSPo2, double lastHR, double healthStatus) {
+    public LastMeasurementsModel(double lastSPo2, double lastHR, String healthStatus, Date lastUpdate) {
         this.lastSPo2 = lastSPo2;
         this.lastHR = lastHR;
         this.healthStatus = healthStatus;
+        this.lastUpdate = lastUpdate;
     }
 
     public double getLastSPo2() {
@@ -27,11 +31,19 @@ public class LastMeasurementsModel {
         this.lastHR = lastHR;
     }
 
-    public double getHealthStatus() {
+    public String getHealthStatus() {
         return healthStatus;
     }
 
-    public void setHealthStatus(double healthStatus) {
+    public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
+    }
+
+    public Date getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
 }

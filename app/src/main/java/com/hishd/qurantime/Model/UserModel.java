@@ -13,8 +13,9 @@ public class UserModel {
     private String address;
     private String hospitalID;
     private String hospitalName;
+    private String hospitalContact;
 
-    public UserModel(String fullName, String nicNo, String contactNo, String emailAddress, String districtID, String districtName, String cityID, String cityName, String address, String hospitalID, String hospitalName) {
+    public UserModel(String fullName, String nicNo, String contactNo, String emailAddress, String districtID, String districtName, String cityID, String cityName, String address, String hospitalID, String hospitalName, String hospitalContact) {
         this.fullName = fullName;
         this.nicNo = nicNo;
         this.contactNo = contactNo;
@@ -26,6 +27,7 @@ public class UserModel {
         this.address = address;
         this.hospitalID = hospitalID;
         this.hospitalName = hospitalName;
+        this.hospitalContact = hospitalContact;
     }
 
     public String getFullName() {
@@ -114,5 +116,13 @@ public class UserModel {
 
     public void setHospitalName(String hospitalName) {
         this.hospitalName = hospitalName;
+    }
+
+    public String getHospitalContact() {
+        return hospitalContact;
+    }
+
+    public void setHospitalContact(String hospitalContact) {
+        this.hospitalContact = hospitalContact;
     }
 }

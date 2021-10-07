@@ -128,7 +128,7 @@ public class OfficerProfileActivity extends BaseActivity implements APIOperation
             apiOperation.updateProfile(
                     APIOperation.USER_TYPE.OFFICER,
                     appConfig.getUserConfig().getNicNo(),
-                    binding.textFullName.getText().toString(),
+                    binding.txtFullName.getText().toString(),
                     binding.txtContactNo.getText().toString(),
                     binding.txtEmail.getText().toString(),
                     this

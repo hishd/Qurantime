@@ -1,11 +1,11 @@
 package com.hishd.qurantime.Model;
 
 public class CurrentConditionModel {
-    private boolean headache;
-    private boolean cough;
-    private boolean shortnessOfBreath;
-    private boolean soreTroat;
-    private boolean fever;
+    private boolean headache = false;
+    private boolean cough = false;
+    private boolean shortnessOfBreath = false;
+    private boolean soreTroat = false;
+    private boolean fever = false;
 
     public boolean isHeadache() {
         return headache;

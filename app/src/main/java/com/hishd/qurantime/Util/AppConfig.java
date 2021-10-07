@@ -103,6 +103,16 @@ public class AppConfig {
         return lightDB.getBoolean(Constraints.SHOW_APP_INTRO);
     }
 
+    public void setMeasureInto(boolean status) {
+        initResources();
+        lightDB.saveBoolean(Constraints.SHOW_MEASURE_INTRO, status);
+    }
+
+    public boolean getMeasureIntroStatus() {
+        initResources();
+        return lightDB.getBoolean(Constraints.SHOW_MEASURE_INTRO);
+    }
+
     public boolean isOfficerType() {
         initResources();
         return lightDB.getBoolean(Constraints.USERTYPE_OFFICER);

@@ -40,8 +40,8 @@
     <string name="enter_password">මුරපදය</string>
     <string name="re_enter_password">මුරපදය නැවත</string>
     <string name="change">වෙනස් කරන්න</string>
-    <string name="good_morning">සුභ උදෑසනක්</string>
-    <string name="good_evening">සුභ සැන්දෑවක්</string>
+    <string name="good_morning">සුභ උදෑසනක්,</string>
+    <string name="good_evening">සුභ සැන්දෑවක්,</string>
     <string name="register_new_patients">නව රෝගීන් ලියාපදිංචිය</string>
     <string name="view_patients">රෝගීන් බලන්න</string>
     <string name="manage_patients">කළමනාකරණය</string>

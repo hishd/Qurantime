@@ -24,6 +24,7 @@ public class OfficerHomeActivity extends BaseActivity implements APIOperation.On
     ActivityOfficerHomeBinding binding;
     private Dialog progressDialog;
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+    boolean isDataLoaded = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +38,19 @@ public class OfficerHomeActivity extends BaseActivity implements APIOperation.On
     @Override
     protected void onResume() {
         super.onResume();
-        refreshAreaOverview(true);
+        if (isDataLoaded)
+            refreshAreaOverview(true);
+        if (Calendar.getInstance().get(Calendar.AM_PM) == Calendar.AM) {
+            binding.txtGreeting.setText(getResources().getString(R.string.good_morning));
+        } else {
+            binding.txtGreeting.setText(getResources().getString(R.string.good_evening));
+        }
+        binding.txtName.setText(appConfig.getUserConfig().getFullName());
     }
 
     @Override
     protected void setupResources() {
         progressDialog = UIUtil.getProgress(this);
-        if (Calendar.getInstance().get(Calendar.AM_PM) == Calendar.AM) {
-            binding.txtGreeting.setText("Good Morning,");
-        } else {
-            binding.txtGreeting.setText("Good Evening,");
-        }
-        binding.txtName.setText(appConfig.getUserConfig().getFullName());
         refreshAreaOverview(false);
     }
 
@@ -91,6 +93,7 @@ public class OfficerHomeActivity extends BaseActivity implements APIOperation.On
 
     @Override
     public void onAreaOverviewLoaded(AreaOverviewModel areaOverview) {
+        isDataLoaded = true;
         progressDialog.dismiss();
         binding.txtPatientCount.setText(String.valueOf(areaOverview.getActivePatients()));
         binding.txtCriticalCount.setText(String.valueOf(areaOverview.getCriticalCount()));

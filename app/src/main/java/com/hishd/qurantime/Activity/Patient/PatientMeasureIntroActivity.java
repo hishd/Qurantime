@@ -64,7 +64,7 @@ public class PatientMeasureIntroActivity extends BaseActivity {
         binding.btnNextFinish.setOnClickListener(v -> {
             if (binding.btnNextFinish.getText().equals("Finish")) {
                 Log.d(TAG, "Saving App Intro Measure status");
-                appConfig.setInto(true);
+                appConfig.setMeasureInto(true);
                 startActivity(new Intent(this, PatientConnectDevice.class));
                 Bungee.fade(this);
                 finish();

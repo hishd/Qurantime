@@ -9,10 +9,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 
 import com.hishd.qurantime.APIService.APIOperation;
 import com.hishd.qurantime.Activity.BaseActivity;
 import com.hishd.qurantime.Activity.Officer.OfficerHomeActivity;
+import com.hishd.qurantime.Activity.Patient.PatientApplicationIntroActivity;
 import com.hishd.qurantime.Activity.Patient.PatientHomeActivity;
 import com.hishd.qurantime.Model.UserModel;
 import com.hishd.qurantime.R;
@@ -101,7 +103,8 @@ public class SignInActivity extends BaseActivity implements APIOperation.OnAPIRe
         if(binding.switchUserType.isOn()) {
             startActivity(new Intent(this, OfficerHomeActivity.class));
         } else {
-            startActivity(new Intent(this, PatientHomeActivity.class));
+            startActivity(new Intent(this, PatientApplicationIntroActivity.class));
+            Log.d("hospitalContact", userModel.getHospitalContact());
         }
         Bungee.fade(this);
         finishAffinity();

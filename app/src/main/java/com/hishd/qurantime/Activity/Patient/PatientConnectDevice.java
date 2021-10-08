@@ -1,12 +1,18 @@
 package com.hishd.qurantime.Activity.Patient;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.hishd.lightpopup.LightPopup;
 import com.hishd.qurantime.Activity.BaseActivity;
@@ -20,6 +26,7 @@ public class PatientConnectDevice extends BaseActivity {
 
     ActivityPatientConnectDeviceBinding binding;
     WifiManager mWifiManager;
+    private final int MY_PERMISSIONS_ACCESS_FINE_LOCATION = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,18 @@ public class PatientConnectDevice extends BaseActivity {
         mWifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
     }
 
+    private void checkPermissions() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            displayAlert(this, AlertType.WARNING, getString(R.string.location_off), getString(R.string.location_off_caption));
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_ACCESS_FINE_LOCATION);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        checkPermissions();
+    }
 
     @Override
     protected void setListeners() {
@@ -43,7 +62,8 @@ public class PatientConnectDevice extends BaseActivity {
         });
         binding.btnNext.setOnClickListener(v -> {
             WifiInfo info = mWifiManager.getConnectionInfo();
-            if(info.getSSID().toLowerCase().startsWith("pulseox")) {
+            Log.e("SSID", info.getSSID());
+            if(info.getSSID().toLowerCase().contains("pulseox")) {
                 startActivity(new Intent(this, PatientMeasureDataActivity.class));
                 Bungee.fade(this);
                 finish();

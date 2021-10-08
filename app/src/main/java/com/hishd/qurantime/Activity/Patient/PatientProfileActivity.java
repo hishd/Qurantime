@@ -164,7 +164,7 @@ public class PatientProfileActivity extends BaseActivity implements APIOperation
         userModel.setContactNo(binding.txtContactNo.getText().toString());
         userModel.setFullName(binding.txtFullName.getText().toString());
         userModel.setEmailAddress(binding.txtEmail.getText().toString());
-        appConfig.saveUserConfig(userModel, true);
+        appConfig.saveUserConfig(userModel, false);
         refreshData();
     }
 

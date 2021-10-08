@@ -3,6 +3,7 @@ package com.hishd.qurantime.APIService;
 import android.content.Context;
 import android.util.Log;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -10,6 +11,7 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.dasbikash.android_network_monitor.NetworkMonitor;
 import com.google.gson.Gson;
@@ -23,6 +25,7 @@ import com.hishd.qurantime.APIService.APIModel.PatientRegistrationModel;
 import com.hishd.qurantime.APIService.APIModel.UpdateSymptomModel;
 import com.hishd.qurantime.Model.UserModel;
 import com.hishd.qurantime.R;
+import com.hishd.qurantime.Util.Constraints;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,6 +45,7 @@ public class APIOperation {
     private JSONObject jsonObject;
     private Gson gson;
     private final Context context;
+    private String[] pulseOXData = new String[2];
 
     //Singleton Constructor
     private APIOperation() {
@@ -63,6 +67,31 @@ public class APIOperation {
         if(!NetworkMonitor.isConnected())
             callback.onConnectionLost(context.getResources().getString(R.string.connection_lost));
         return NetworkMonitor.isConnected();
+    }
+
+    public void pulseOXGetData(OnAPIResultCallback callback) {
+        Log.e(TAG, "Fetching data");
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Constraints.PulseOXURL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.e(TAG, "Data received");
+                pulseOXData = response.split(",");
+                callback.onPulseOXDataLoaded(Double.parseDouble(pulseOXData[0]), Double.parseDouble(pulseOXData[1]));
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                callback.onOperationFailed(context.getResources().getString(R.string.pulse_oximeter_data_error));
+            }
+        });
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                2000,
+                0,
+                0));
+        if (requestQueue == null) {
+            requestQueue = Volley.newRequestQueue(context);
+        }
+        requestQueue.add(stringRequest);
     }
 
     public void getAvailableHospitals(String cityID, OnAPIResultCallback callback) {
@@ -90,6 +119,10 @@ public class APIOperation {
                 error.printStackTrace();
                 if (error instanceof TimeoutError) {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
+                    return;
+                }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
                     return;
                 }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
@@ -137,6 +170,10 @@ public class APIOperation {
                 error.printStackTrace();
                 if (error instanceof TimeoutError) {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
+                    return;
+                }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
                     return;
                 }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
@@ -193,6 +230,10 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
                     return;
                 }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                    return;
+                }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
                 if (error.networkResponse.statusCode == 404)
                     callback.onOperationFailed(context.getResources().getString(R.string.user_not_found_error));
@@ -244,6 +285,10 @@ public class APIOperation {
                 error.printStackTrace();
                 if (error instanceof TimeoutError) {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
+                    return;
+                }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
                     return;
                 }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
@@ -300,6 +345,10 @@ public class APIOperation {
                 error.printStackTrace();
                 if (error instanceof TimeoutError) {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
+                    return;
+                }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
                     return;
                 }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
@@ -360,6 +409,10 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
                     return;
                 }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                    return;
+                }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
                 if (error.networkResponse.statusCode == 404)
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
@@ -410,6 +463,10 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
                     return;
                 }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                    return;
+                }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
                 if (error.networkResponse.statusCode == 404)
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
@@ -454,17 +511,22 @@ public class APIOperation {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                if (error instanceof TimeoutError) {
-                    callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
-                    return;
-                }
-                Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
-                if (error.networkResponse.statusCode == 404)
-                    callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
-                else if (error.networkResponse.statusCode == 400)
-                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
-                else
-                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                Log.e(TAG, "Could not send health data to server");
+//                if (error instanceof TimeoutError) {
+//                    callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
+//                    return;
+//                }
+//                if(error.networkResponse == null) {
+//                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+//                    return;
+//                }
+//                Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
+//                if (error.networkResponse.statusCode == 404)
+//                    callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
+//                else if (error.networkResponse.statusCode == 400)
+//                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+//                else
+//                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
             }
         }) {
             @Override
@@ -500,6 +562,10 @@ public class APIOperation {
                 error.printStackTrace();
                 if (error instanceof TimeoutError) {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
+                    return;
+                }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
                     return;
                 }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
@@ -550,6 +616,10 @@ public class APIOperation {
                 error.printStackTrace();
                 if (error instanceof TimeoutError) {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
+                    return;
+                }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
                     return;
                 }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
@@ -606,6 +676,10 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
                     return;
                 }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                    return;
+                }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
                 if (error.networkResponse.statusCode == 404)
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
@@ -655,6 +729,10 @@ public class APIOperation {
                 error.printStackTrace();
                 if (error instanceof TimeoutError) {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
+                    return;
+                }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
                     return;
                 }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
@@ -712,6 +790,10 @@ public class APIOperation {
                     callback.onOperationFailed(context.getResources().getString(R.string.operation_timeout_error));
                     return;
                 }
+                if(error.networkResponse == null) {
+                    callback.onOperationFailed(context.getResources().getString(R.string.server_error));
+                    return;
+                }
                 Log.e(TAG, String.format(Locale.ENGLISH, "Response code : %d", error.networkResponse.statusCode));
                 if (error.networkResponse.statusCode == 404)
                     callback.onOperationFailed(context.getResources().getString(R.string.no_records_error));
@@ -758,6 +840,8 @@ public class APIOperation {
         //Non exceptional override methods
         void onOperationFailed(String error);
         void onConnectionLost(String message);
+        //Pulse Oximeter Data
+        default void onPulseOXDataLoaded(double spO2, double hr) {}
     }
 
     public enum USER_TYPE {

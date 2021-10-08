@@ -27,9 +27,9 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_180sdp"
+        android:layout_height="@dimen/_160sdp"
         android:layout_below="@id/text_connect_device"
-        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         app:lottie_autoPlay="true"
         app:lottie_fileName="connect_with_device.json"
@@ -57,17 +57,30 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:background="@drawable/container_blue"
         android:fontFamily="@font/gilroy_semi_bold"
+        android:paddingStart="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_5sdp"
         android:text="@string/open_wifi"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/_10sdp" />
 
     <TextView
-        android:id="@+id/text_instructions_1"
+        android:id="@+id/text_instructions_0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_connection_steps"
         android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/gilroy_medium"
+        android:text="@string/connection_instruction_0"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:id="@+id/text_instructions_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_instructions_0"
+        android:layout_marginTop="@dimen/_5sdp"
         android:fontFamily="@font/gilroy_medium"
         android:text="@string/connection_instructions_1"
         android:textColor="@color/blue"
@@ -118,7 +131,7 @@
         android:layout_marginStart="@dimen/_60sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_60sdp"
-        android:background="@drawable/button_light_blue_round"
+        android:background="@drawable/container_blue"
         android:fontFamily="@font/gilroy_semi_bold"
         android:text="@string/next"
         android:textAllCaps="false"

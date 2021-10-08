@@ -183,12 +183,11 @@
     <string name="invalid_device">Invalid Device</string>
     <string name="invalid_device_caption">The selected device is not a pulse oximeter</string>
     <string name="connection_steps">Connection Steps</string>
-    <string name="connection_instructions_1">
-        1) Open your Wifi Settings
-    </string>
-    <string name="connection_instruction_2">2) Connect with your Pulse Oximeter or use the QR on the box to quick connect.</string>
-    <string name="connection_instruction_3">3) Use the provided password on the box to connect.</string>
-    <string name="connection_instruction_4">4) Return Back to this application</string>
+    <string name="connection_instruction_0">1) Turn off mobile data connection</string>
+    <string name="connection_instructions_1">2) Open your Wifi Settings</string>
+    <string name="connection_instruction_2">3) Connect with your Pulse Oximeter or use the QR on the box to quick connect.</string>
+    <string name="connection_instruction_3">4) Use the provided password on the box to connect.</string>
+    <string name="connection_instruction_4">5) Return Back to this application</string>
     <string name="open_wifi">Open WiFi</string>
     <string name="unknown_device">Unknown Device</string>
     <string name="unknown_device_caption">The connected pulse oximeter could not be found or the application doesn\'t recognize the device. Continue anyway?</string>
@@ -196,4 +195,7 @@
     <string name="symptoms_updated">Symptoms Updated</string>
     <string name="symptoms_updated_caption">Your symptoms were updated successfully</string>
     <string name="data_updated">Data updated!</string>
+    <string name="pulse_oximeter_data_error">Could not read data from Pulse Oximeter</string>
+    <string name="finger_out">Finger out</string>
+    <string name="waiting">Waiting...!</string>
 </resources>

@@ -11,4 +11,5 @@ public class Constraints {
     public static final String CURRENT_CONDITION = "CURRENT_CONDITION";
     public static final String SHOW_MEASURE_INTRO = "SHOW_MEASURE_INTRO";
     public static final int REALM_SCHEMA_V_NOW = 1;
+    public static final String PulseOXURL = "http://192.168.4.1/all";
 }

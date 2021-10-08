@@ -17,7 +17,7 @@
         android:fontFamily="@font/gilroy_bold"
         android:lines="1"
         android:text="Dialog Title"
-        android:textColor="@color/blue_light"
+        android:textColor="@color/general"
         android:textSize="@dimen/_18sdp"
         android:textStyle="bold" />
 
@@ -42,7 +42,7 @@
         android:layout_below="@id/txtMessage"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/_20sdp"
-        android:background="@drawable/button_light_blue_round"
+        android:background="@drawable/button_general_round"
         android:fontFamily="@font/gilroy_bold"
         android:paddingStart="@dimen/_20sdp"
         android:paddingTop="@dimen/_5sdp"

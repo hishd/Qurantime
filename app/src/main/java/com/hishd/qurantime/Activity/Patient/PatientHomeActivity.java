@@ -68,6 +68,13 @@ public class PatientHomeActivity extends BaseActivity implements APIOperation.On
     @Override
     protected void setupResources() {
         progressDialog = UIUtil.getProgress(this);
+        binding.containerSpo2.startAnimation(animEnterFromLeft);
+        binding.containerStatus.startAnimation(animEnterFromRight);
+        binding.containerBpm.startAnimation(animFadeEnter);
+        binding.containerSymptoms.startAnimation(animFadeEnter);
+        binding.containerEmergencyServices.startAnimation(animEnterFromLeft);
+        binding.containerMeasureNow.startAnimation(animEnterFromRight);
+        binding.containerHistory.startAnimation(animEnterFromRight);
     }
 
     @Override

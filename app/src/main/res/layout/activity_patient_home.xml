@@ -226,6 +226,7 @@
                 android:textSize="@dimen/_10sdp" />
 
             <LinearLayout
+                android:id="@+id/container_symptoms"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_feel_now"

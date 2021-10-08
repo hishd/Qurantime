@@ -20,4 +20,7 @@
     <color name="bg_error">#FF4A4A</color>
     <color name="bg_warning">#686868</color>
     <color name="bg_success">#05BF04</color>
+
+    <color name="button_destroy">#FF6A6A</color>
+    <color name="button_general">#65A3FF</color>
 </resources>

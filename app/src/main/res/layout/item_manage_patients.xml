@@ -114,11 +114,11 @@
 
     <Button
         android:id="@+id/btnDelete"
-        android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_20sdp"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
         android:layout_alignBottom="@id/containerMain"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/ic_remove" />
 

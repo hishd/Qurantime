@@ -97,7 +97,7 @@
     <LinearLayout
         android:id="@+id/containerEdit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_270sdp"
         android:layout_below="@id/text_edit_information"
         android:layout_marginTop="@dimen/_10sdp"
         android:background="@drawable/bg_gradient"
@@ -212,6 +212,17 @@
             android:textSize="@dimen/_13sdp" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_select_language"
+        android:fontFamily="@font/gilroy_medium"
+        android:maxLines="1"
+        android:text="@string/application_will_restart"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_10sdp" />
 
     <TextView
         android:id="@+id/text_select_language"

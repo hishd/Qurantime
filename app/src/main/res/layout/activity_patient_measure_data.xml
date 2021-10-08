@@ -255,7 +255,7 @@
         android:layout_marginStart="@dimen/_80sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_80sdp"
-        android:background="@drawable/container_blue"
+        android:background="@drawable/button_light_blue_round"
         android:fontFamily="@font/gilroy_semi_bold"
         android:text="@string/done"
         android:textAllCaps="false"

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.Nullable;
@@ -29,6 +31,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected AppConfig appConfig;
     protected final UIUtil UIUtil = new UIUtil();
     protected final QurantimeDB qurantimeDB = new QurantimeDB();
+    protected Animation animEnterFromLeft;
+    protected Animation animEnterFromRight;
+    protected Animation animEnterFromBottom;
+    protected Animation animFadeEnter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,6 +42,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         apiOperation = APIOperation.getInstance();
         appConfig = AppConfig.getInstance();
+
+        animEnterFromLeft = AnimationUtils.loadAnimation(this, R.anim.swipe_right_enter);
+        animEnterFromRight = AnimationUtils.loadAnimation(this, R.anim.swipe_left_enter);
+        animEnterFromBottom = AnimationUtils.loadAnimation(this, R.anim.slide_in_from_bottom);
+        animFadeEnter = AnimationUtils.loadAnimation(this, R.anim.fade_enter);
 
         if(AppConfig.getInstance().getLanguage() == null) {
             LocaleHelper.setLocale(this, "en");

@@ -100,6 +100,10 @@ public class OfficerHomeActivity extends BaseActivity implements APIOperation.On
         binding.txtNormalCount.setText(String.valueOf(areaOverview.getNormalCount()));
         binding.txtArea.setText(appConfig.getUserConfig().getCityName());
         binding.txtDate.setText(simpleDateFormat.format(new Date()));
+
+        binding.containerPatientCount.startAnimation(animFadeEnter);
+        binding.containerCriticalPatients.startAnimation(animEnterFromLeft);
+        binding.containerNormalPatients.startAnimation(animEnterFromRight);
     }
 
     @Override

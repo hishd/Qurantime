@@ -1,6 +1,5 @@
 package com.hishd.qurantime.Activity.Patient;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
@@ -8,24 +7,33 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.hishd.qurantime.APIService.APIModel.HealthStatusModel;
+import com.hishd.qurantime.APIService.APIModel.UpdateHealthStatusModel;
+import com.hishd.qurantime.APIService.APIOperation;
 import com.hishd.qurantime.Activity.BaseActivity;
-import com.hishd.qurantime.Activity.Officer.OfficerProfileActivity;
+import com.hishd.qurantime.Model.CachedHealthStatusModel;
 import com.hishd.qurantime.Model.CurrentConditionModel;
+import com.hishd.qurantime.APIService.APIModel.SymptomModel;
+import com.hishd.qurantime.APIService.APIModel.UpdateSymptomModel;
 import com.hishd.qurantime.R;
 import com.hishd.qurantime.databinding.ActivityPatientHomeBinding;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 import spencerstudios.com.bungeelib.Bungee;
 
-public class PatientHomeActivity extends BaseActivity {
+public class PatientHomeActivity extends BaseActivity implements APIOperation.OnAPIResultCallback {
 
     ActivityPatientHomeBinding binding;
     private Dialog progressDialog;
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
+    ArrayList<SymptomModel> symptoms = new ArrayList<>();
 
     //Symptoms
     boolean isHeadAche = false;
@@ -48,6 +56,7 @@ public class PatientHomeActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
         refreshMeasurementData();
+        uploadCachedData();
         if (Calendar.getInstance().get(Calendar.AM_PM) == Calendar.AM) {
             binding.txtGreeting.setText(getResources().getString(R.string.good_morning));
         } else {
@@ -69,7 +78,7 @@ public class PatientHomeActivity extends BaseActivity {
             this.currentCondition.setHeadache(this.isHeadAche);
             appConfig.saveCurrentCondition(currentCondition);
             binding.containerHeadache.setBackground(
-                    currentCondition.isHeadache() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
+                    !currentCondition.isHeadache() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
                             ContextCompat.getDrawable(this, R.drawable.container_symptom)
             );
             sendCurrentSymptomData();
@@ -79,7 +88,7 @@ public class PatientHomeActivity extends BaseActivity {
             this.currentCondition.setCough(this.isCough);
             appConfig.saveCurrentCondition(currentCondition);
             binding.containerCough.setBackground(
-                    currentCondition.isCough() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
+                    !currentCondition.isCough() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
                             ContextCompat.getDrawable(this, R.drawable.container_symptom)
             );
             sendCurrentSymptomData();
@@ -89,7 +98,7 @@ public class PatientHomeActivity extends BaseActivity {
             this.currentCondition.setShortnessOfBreath(this.isShortness);
             appConfig.saveCurrentCondition(currentCondition);
             binding.containerShortness.setBackground(
-                    currentCondition.isShortnessOfBreath() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
+                    !currentCondition.isShortnessOfBreath() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
                             ContextCompat.getDrawable(this, R.drawable.container_symptom)
             );
             sendCurrentSymptomData();
@@ -99,7 +108,7 @@ public class PatientHomeActivity extends BaseActivity {
             this.currentCondition.setSoreTroat(this.isSoreTorat);
             appConfig.saveCurrentCondition(currentCondition);
             binding.containerSoreTroat.setBackground(
-                    currentCondition.isSoreTroat() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
+                    !currentCondition.isSoreTroat() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
                             ContextCompat.getDrawable(this, R.drawable.container_symptom)
             );
             sendCurrentSymptomData();
@@ -109,7 +118,7 @@ public class PatientHomeActivity extends BaseActivity {
             this.currentCondition.setFever(this.isFever);
             appConfig.saveCurrentCondition(currentCondition);
             binding.containerFever.setBackground(
-                    currentCondition.isFever() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
+                    !currentCondition.isFever() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
                             ContextCompat.getDrawable(this, R.drawable.container_symptom)
             );
             sendCurrentSymptomData();
@@ -144,27 +153,32 @@ public class PatientHomeActivity extends BaseActivity {
             binding.txtBPM.setText(String.format(Locale.ENGLISH, "%.0f BPM", appConfig.getLastMeasurements().getLastHR()));
             binding.txtStatus.setText(appConfig.getLastMeasurements().getHealthStatus());
             binding.txtTime.setText(String.format("%s : %s", getResources().getString(R.string.time), simpleDateFormat.format(appConfig.getLastMeasurements().getLastUpdate())));
+            if(appConfig.getLastMeasurements().getHealthStatus().equals("Normal")) {
+                binding.containerStatus.setBackground(ContextCompat.getDrawable(this, R.drawable.container_orange));
+            } else {
+                binding.containerStatus.setBackground(ContextCompat.getDrawable(this, R.drawable.container_red));
+            }
         }
         if(appConfig.getLastCurrentCondition() != null) {
             currentCondition = appConfig.getLastCurrentCondition();
             binding.containerHeadache.setBackground(
-                    currentCondition.isHeadache() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
+                    !currentCondition.isHeadache() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
                             ContextCompat.getDrawable(this, R.drawable.container_symptom)
                     );
             binding.containerCough.setBackground(
-                    currentCondition.isCough() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
+                    !currentCondition.isCough() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
                             ContextCompat.getDrawable(this, R.drawable.container_symptom)
             );
             binding.containerShortness.setBackground(
-                    currentCondition.isShortnessOfBreath() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
+                    !currentCondition.isShortnessOfBreath() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
                             ContextCompat.getDrawable(this, R.drawable.container_symptom)
             );
             binding.containerSoreTroat.setBackground(
-                    currentCondition.isSoreTroat() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
+                    !currentCondition.isSoreTroat() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
                             ContextCompat.getDrawable(this, R.drawable.container_symptom)
             );
             binding.containerFever.setBackground(
-                    currentCondition.isFever() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
+                    !currentCondition.isFever() ? ContextCompat.getDrawable(this, R.drawable.container_no_symptom) :
                             ContextCompat.getDrawable(this, R.drawable.container_symptom)
             );
 
@@ -179,6 +193,63 @@ public class PatientHomeActivity extends BaseActivity {
     }
 
     private void sendCurrentSymptomData() {
+        symptoms.clear();
+        if(isHeadAche) {
+            symptoms.add(new SymptomModel("Headache"));
+            Log.e("Result", "Headache");
+        }
+        if(isCough) {
+            symptoms.add(new SymptomModel("Cough"));
+            Log.e("Result", "Cough");
+        }
+        if(isShortness) {
+            symptoms.add(new SymptomModel("Shortness of Breath"));
+            Log.e("Result", "Shortness of Breath");
+        }
+        if(isSoreTorat) {
+            symptoms.add(new SymptomModel("Sore Troat"));
+            Log.e("Result", "Sore Troat");
+        }
+        if(isFever) {
+            symptoms.add(new SymptomModel("Fever"));
+            Log.e("Result", "Fever");
+        }
+        progressDialog.show();
+        apiOperation.patientUpdateSymptoms(new UpdateSymptomModel(appConfig.getUserConfig().getNicNo(), symptoms), this);
+    }
 
+    private void uploadCachedData() {
+        final List<CachedHealthStatusModel> cachedHealthStatus = qurantimeDB.getCachedHealthStatus();
+        if(cachedHealthStatus!=null && cachedHealthStatus.size() > 0) {
+            final ArrayList<HealthStatusModel> healthMeasurements = new ArrayList<>();
+            for(CachedHealthStatusModel model : cachedHealthStatus) {
+                healthMeasurements.add(new HealthStatusModel(model.getSpo2Level(), model.getBpmLevel()));
+            }
+            apiOperation.patientUpdateHealthStatus(new UpdateHealthStatusModel(appConfig.getUserConfig().getNicNo(), healthMeasurements), this);
+        }
+    }
+
+    @Override
+    public void onHealthStatusUpdated(String message) {
+        Toast.makeText(this, getString(R.string.data_updated), Toast.LENGTH_SHORT).show();
+        qurantimeDB.clearCachedHealthStatus();
+    }
+
+    @Override
+    public void onSymptomsUpdated(String message) {
+        progressDialog.dismiss();
+        displayAlert(this, AlertType.SUCCESS, getString(R.string.symptoms_updated), getString(R.string.symptoms_updated_caption));
+    }
+
+    @Override
+    public void onOperationFailed(String error) {
+        progressDialog.dismiss();
+        displayAlert(this, AlertType.ERROR, getString(R.string.operation_failed), error);
+    }
+
+    @Override
+    public void onConnectionLost(String message) {
+        progressDialog.dismiss();
+        displayAlert(this, AlertType.WARNING, getString(R.string.connection_error), message);
     }
 }

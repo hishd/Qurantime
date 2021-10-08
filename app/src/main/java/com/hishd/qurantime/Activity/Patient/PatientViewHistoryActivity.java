@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.hishd.qurantime.APIService.APIOperation;
 import com.hishd.qurantime.Activity.BaseActivity;
 import com.hishd.qurantime.Adapters.RecordHistoryAdapter;
-import com.hishd.qurantime.Model.MeasurementRecordModel;
+import com.hishd.qurantime.Model.MeasurementHistoryRecordModel;
 import com.hishd.qurantime.R;
 import com.hishd.qurantime.Util.ItemOffsetDecoration;
 import com.hishd.qurantime.databinding.ActivityPatientViewHistoryBinding;
@@ -22,7 +22,7 @@ import java.util.Locale;
 public class PatientViewHistoryActivity extends BaseActivity implements APIOperation.OnAPIResultCallback {
 
     ActivityPatientViewHistoryBinding binding;
-    ArrayList<MeasurementRecordModel> measurementRecordList = new ArrayList<>();
+    ArrayList<MeasurementHistoryRecordModel> measurementRecordList = new ArrayList<>();
     RecordHistoryAdapter recordHistoryAdapter;
     private Animation recyclerAnimation;
     private Dialog progressDialog;
@@ -65,7 +65,7 @@ public class PatientViewHistoryActivity extends BaseActivity implements APIOpera
     }
 
     @Override
-    public void onPatientHistoryLoaded(ArrayList<MeasurementRecordModel> lastMeasurements) {
+    public void onPatientHistoryLoaded(ArrayList<MeasurementHistoryRecordModel> lastMeasurements) {
         progressDialog.dismiss();
         this.measurementRecordList.clear();
         this.measurementRecordList.addAll(lastMeasurements);
@@ -74,7 +74,7 @@ public class PatientViewHistoryActivity extends BaseActivity implements APIOpera
 
         double avgSpO2 = 0;
         double avgBPM = 0;
-        for (MeasurementRecordModel measurementRecord : lastMeasurements) {
+        for (MeasurementHistoryRecordModel measurementRecord : lastMeasurements) {
             avgSpO2 += measurementRecord.getSpo2Level();
             avgBPM += measurementRecord.getBpmLevel();
         }

@@ -1,4 +1,4 @@
-package com.hishd.qurantime.Model;
+package com.hishd.qurantime.APIService.APIModel;
 
 import java.util.ArrayList;
 

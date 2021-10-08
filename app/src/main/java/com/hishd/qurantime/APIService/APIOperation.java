@@ -3,8 +3,6 @@ package com.hishd.qurantime.APIService;
 import android.content.Context;
 import android.util.Log;
 
-import androidx.core.content.ContextCompat;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -15,13 +13,14 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.dasbikash.android_network_monitor.NetworkMonitor;
 import com.google.gson.Gson;
+import com.hishd.qurantime.APIService.APIModel.UpdateHealthStatusModel;
 import com.hishd.qurantime.Application.MainApplication;
 import com.hishd.qurantime.Model.AreaOverviewModel;
 import com.hishd.qurantime.Model.HospitalModel;
-import com.hishd.qurantime.Model.MeasurementRecordModel;
+import com.hishd.qurantime.Model.MeasurementHistoryRecordModel;
 import com.hishd.qurantime.Model.PatientModel;
-import com.hishd.qurantime.Model.PatientRegistrationModel;
-import com.hishd.qurantime.Model.SymptomModel;
+import com.hishd.qurantime.APIService.APIModel.PatientRegistrationModel;
+import com.hishd.qurantime.APIService.APIModel.UpdateSymptomModel;
 import com.hishd.qurantime.Model.UserModel;
 import com.hishd.qurantime.R;
 
@@ -31,7 +30,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -342,11 +340,11 @@ public class APIOperation {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, URLEndpoints.patientGetMeasurementHistory, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                final ArrayList<MeasurementRecordModel> records = new ArrayList<>();
+                final ArrayList<MeasurementHistoryRecordModel> records = new ArrayList<>();
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         jsonObject = response.getJSONObject(i);
-                        records.add(gson.fromJson(jsonObject.toString(), MeasurementRecordModel.class));
+                        records.add(gson.fromJson(jsonObject.toString(), MeasurementHistoryRecordModel.class));
                     } catch (JSONException e) {
                         e.printStackTrace();
                         callback.onOperationFailed(context.getResources().getString(R.string.application_error));
@@ -390,7 +388,7 @@ public class APIOperation {
         requestQueue.add(jsonArrayRequest);
     }
 
-    public void patientUpdateSymptoms(String nicNo, ArrayList<SymptomModel> symptoms, OnAPIResultCallback callback) {
+    public void patientUpdateSymptoms(UpdateSymptomModel symptoms, OnAPIResultCallback callback) {
         if (!checkConnection(callback)) {
             return;
         }
@@ -423,10 +421,7 @@ public class APIOperation {
         }) {
             @Override
             public byte[] getBody() {
-                Map<String, String> params = new HashMap<>();
-                params.put(Keys.PatientKeys.nicNo, nicNo);
-                params.put(Keys.PatientKeys.symptoms, gson.toJson(symptoms));
-                return new JSONObject(params).toString().getBytes();
+                return gson.toJson(symptoms).getBytes();
             }
 
             @Override
@@ -441,11 +436,11 @@ public class APIOperation {
         requestQueue.add(jsonObjectRequest);
     }
 
-    public void patientUpdateHealthStatus(String nicNo, String spo2Level, String bpmLevel, OnAPIResultCallback callback) {
-        if (!checkConnection(callback)) {
+    public void patientUpdateHealthStatus(UpdateHealthStatusModel updateHealthStatusModel, OnAPIResultCallback callback) {
+        if (!NetworkMonitor.isConnected()) {
             return;
         }
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, URLEndpoints.patientUpdateHealthStatus, null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.PUT, URLEndpoints.patientUpdateHealthStatus, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
@@ -474,11 +469,7 @@ public class APIOperation {
         }) {
             @Override
             public byte[] getBody() {
-                Map<String, String> params = new HashMap<>();
-                params.put(Keys.PatientKeys.nicNo, nicNo);
-                params.put(Keys.PatientKeys.spo2Level, spo2Level);
-                params.put(Keys.PatientKeys.bpmLevel, bpmLevel);
-                return new JSONObject(params).toString().getBytes();
+                return gson.toJson(updateHealthStatusModel).getBytes();
             }
 
             @Override
@@ -762,7 +753,7 @@ public class APIOperation {
         default void onProfileUpdated(String message){}
         default void onSymptomsUpdated(String message){}
         default void onHealthStatusUpdated(String message){}
-        default void onPatientHistoryLoaded(ArrayList<MeasurementRecordModel> lastMeasurements){}
+        default void onPatientHistoryLoaded(ArrayList<MeasurementHistoryRecordModel> lastMeasurements){}
         default void onHospitalsLoaded(ArrayList<HospitalModel> hospitals) {}
         //Non exceptional override methods
         void onOperationFailed(String error);

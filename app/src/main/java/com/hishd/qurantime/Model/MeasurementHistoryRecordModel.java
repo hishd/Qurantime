@@ -1,6 +1,6 @@
 package com.hishd.qurantime.Model;
 
-public class MeasurementRecordModel {
+public class MeasurementHistoryRecordModel {
     private double spo2Level;
     private double bpmLevel;
     private String time;

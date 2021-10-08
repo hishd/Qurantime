@@ -1,7 +1,5 @@
 package com.hishd.qurantime.Activity.Officer;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.annotation.SuppressLint;
@@ -14,9 +12,9 @@ import com.hishd.multiselectpopup.MultiSelectDialog;
 import com.hishd.multiselectpopup.MultiSelectModel;
 import com.hishd.qurantime.APIService.APIOperation;
 import com.hishd.qurantime.Activity.BaseActivity;
-import com.hishd.qurantime.Model.ComorbidityModel;
+import com.hishd.qurantime.APIService.APIModel.ComorbidityModel;
 import com.hishd.qurantime.Model.HospitalModel;
-import com.hishd.qurantime.Model.PatientRegistrationModel;
+import com.hishd.qurantime.APIService.APIModel.PatientRegistrationModel;
 import com.hishd.qurantime.R;
 import com.hishd.qurantime.Util.Validator;
 import com.hishd.qurantime.databinding.ActivityOfficerAddPatientBinding;

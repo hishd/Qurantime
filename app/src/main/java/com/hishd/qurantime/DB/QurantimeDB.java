@@ -1,5 +1,6 @@
 package com.hishd.qurantime.DB;
 
+import com.hishd.qurantime.Model.CachedHealthStatusModel;
 import com.hishd.qurantime.Model.HospitalModel;
 
 import java.util.List;
@@ -29,5 +30,21 @@ public class QurantimeDB {
 
     public List<HospitalModel> getHospitalList() {
         return realm.where(HospitalModel.class).findAll();
+    }
+
+    public void cacheHealthStatus(CachedHealthStatusModel healthStatusModel) {
+        realm.beginTransaction();
+        realm.insert(healthStatusModel);
+        realm.commitTransaction();
+    }
+
+    public List<CachedHealthStatusModel> getCachedHealthStatus() {
+        return realm.where(CachedHealthStatusModel.class).findAll();
+    }
+
+    public void clearCachedHealthStatus() {
+        realm.beginTransaction();
+        realm.delete(CachedHealthStatusModel.class);
+        realm.commitTransaction();
     }
 }

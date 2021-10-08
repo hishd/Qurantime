@@ -193,4 +193,7 @@
     <string name="unknown_device">Unknown Device</string>
     <string name="unknown_device_caption">The connected pulse oximeter could not be found or the application doesn\'t recognize the device. Continue anyway?</string>
     <string name="continue_operation">Continue</string>
+    <string name="symptoms_updated">Symptoms Updated</string>
+    <string name="symptoms_updated_caption">Your symptoms were updated successfully</string>
+    <string name="data_updated">Data updated!</string>
 </resources>

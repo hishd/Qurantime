@@ -84,9 +84,9 @@
     <string name="intro_caption_1">සෞඛ්ය තත්ත්වය</string>
     <string name="intro_caption_2">SPo2 සහ BPM මැනීම</string>
     <string name="intro_caption_3">හදිසි සම්බන්ධතා</string>
-    <string name="intro_content_1">Qurantime මඟින් ඔබේ වර්තමාන සෞඛ්‍ය තත්ත්වය යාවත්කාලීන කිරීමට හැකි වන අතර එමඟින් සෞඛ්‍ය බලධාරීන්ට ඔබේ සෞඛ්‍ය තත්ත්වය නිරීක්ෂණය කළ හැකිය.</string>
-    <string name="intro_content_2">සපයා ඇති ස්පන්දන ඔක්සිමීටරය, Qurantime සමඟ සම්බන්ධ වීම ඔබේ මනින ලද දත්ත බලධාරීන් වෙත යවනු ඇත.</string>
-    <string name="intro_content_3">ආන්තික අවස්ථාවන්හිදී හැකි ඉක්මනින් සමීපතම සෞඛ්‍ය නිලධාරීන් සම්බන්ධ කර ගැනීමට Qurantime යෙදුම ඔබට ඉඩ සලසයි.</string>
+    <string name="intro_content_1">Quarantime මඟින් ඔබේ වර්තමාන සෞඛ්‍ය තත්ත්වය යාවත්කාලීන කිරීමට හැකි වන අතර එමඟින් සෞඛ්‍ය බලධාරීන්ට ඔබේ සෞඛ්‍ය තත්ත්වය නිරීක්ෂණය කළ හැකිය.</string>
+    <string name="intro_content_2">සපයා ඇති ස්පන්දන ඔක්සිමීටරය, Quarantime සමඟ සම්බන්ධ වීම ඔබේ මනින ලද දත්ත බලධාරීන් වෙත යවනු ඇත.</string>
+    <string name="intro_content_3">ආන්තික අවස්ථාවන්හිදී හැකි ඉක්මනින් සමීපතම සෞඛ්‍ය නිලධාරීන් සම්බන්ධ කර ගැනීමට Quarantime යෙදුම ඔබට ඉඩ සලසයි.</string>
     <string name="emergency_services">හදිසි සේවා</string>
     <string name="measure_now">මැන බලන්න</string>
     <string name="record_history">ඉතිහාසය වාර්තා </string>
@@ -187,7 +187,7 @@
     <string name="connection_instruction_3">4) සම්බන්ධ කිරීම සඳහා පෙට්ටියේ ඇති මුරපදය භාවිතා කරන්න.</string>
     <string name="connection_instruction_4">5) මෙම යෙදුම වෙත ආපසු එන්න.</string>
     <string name="open_wifi">විවෘත කරන්න</string>
-    <string name="unknown_device">Uහඳුනානොගත් උපකරණය</string>
+    <string name="unknown_device">හඳුනානොගත් උපකරණය</string>
     <string name="unknown_device_caption">සම්බන්ධිත ස්පන්දන ඔක්සිමීටරය සොයා ගැනීමට නොහැකි විය හෝ යෙදුම උපාංගය හඳුනා නොගනී. කෙසේ හෝ කරගෙන යන්න?</string>
     <string name="continue_operation">ඉදිරියට</string>
     <string name="symptoms_updated">යාවත්කාලීන කරන ලදි</string>

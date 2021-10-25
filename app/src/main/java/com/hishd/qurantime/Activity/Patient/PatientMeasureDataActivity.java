@@ -113,8 +113,6 @@ public class PatientMeasureDataActivity extends BaseActivity implements APIOpera
     public void onPulseOXDataLoaded(double spO2, double hr) {
         binding.txtSPO2.setText(String.format(Locale.ENGLISH, "%.1f%%", spO2));
         binding.txtBPM.setText(String.format(Locale.ENGLISH, "%.0f", hr));
-        this.currentSpO2 = spO2;
-        this.currentBPM = hr;
         if(spO2 == 0 || hr == 0) {
             pulseDetected = false;
             binding.txtSPO2Result.setText(R.string.finger_out);
@@ -122,6 +120,8 @@ public class PatientMeasureDataActivity extends BaseActivity implements APIOpera
             return;
         }
         pulseDetected = true;
+        this.currentSpO2 = spO2;
+        this.currentBPM = hr;
         if(spO2 < 94) {
             binding.txtSPO2Result.setText(getResources().getString(R.string.severe));
         } else {

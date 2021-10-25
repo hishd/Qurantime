@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Qurantime</string>
+    <string name="app_name" translatable="false">Quarantime</string>
 
     <string-array name="comorbidities">
         <item>Heart failure</item>
@@ -86,9 +86,9 @@
     <string name="intro_caption_1">Health Status</string>
     <string name="intro_caption_2"><![CDATA[Measure SPo2 & BPM]]></string>
     <string name="intro_caption_3">Emergency Contacts</string>
-    <string name="intro_content_1">Qurantime will enable you to update your current health status so that the health authorities could keep monitoring your health status.</string>
-    <string name="intro_content_2">The Provided Pulse Oximeter along with Qurantime application will send your measured data to the authorities in-order to keep in touch.</string>
-    <string name="intro_content_3">Qurantime application will let you contact nearest health officers ASAP during extreme situations.</string>
+    <string name="intro_content_1">Quarantime will enable you to update your current health status so that the health authorities could keep monitoring your health status.</string>
+    <string name="intro_content_2">The Provided Pulse Oximeter along with Quarantime application will send your measured data to the authorities in-order to keep in touch.</string>
+    <string name="intro_content_3">Quarantime application will let you contact nearest health officers ASAP during extreme situations.</string>
     <string name="emergency_services">Emergency Services</string>
     <string name="measure_now">Measure Now</string>
     <string name="record_history">Record History</string>
